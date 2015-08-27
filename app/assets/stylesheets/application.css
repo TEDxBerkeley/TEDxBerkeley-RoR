@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require foundation
+ *= require_tree .
+ *= require_self
+ */
+
+.container {
+	min-height: 600px;
+}
+
+body {
+    /* background-image: image-url('zellerbach.jpg'); */
+    /* background-size: contain; */
+    background: white;
+  	color: white;
+}
+
+body h1 {
+	color: white;
+}
+
+body h2 {
+	color: white;
+}
+
+body h3 {
+	color: white;
+}
+
+body p {
+	color: white;
+}
+
+.top-bar {
+	background: white;
+	color: black;
+	height: 48px;
+}
+
+.top-bar .name h1 a {
+	color: black;
+}
+
+.top-bar-section .right a {
+	background: white;
+	color: black;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+	background: white;
+	height: 48px;
+	color: black;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+	background: red;
+}
+
+/* Banner Styling --- TODO: Look up how to inherit CSS styles .banner -> .thin-banner; */ 
+
+.banner {
+	height: 480px;
+	width: 100%;
+	background-color: orange;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+.thin-banner {
+	height: 240px;
+	width: 100%;
+	background-color: orange;
+	padding-left: 20px;
+	padding-top: 20px;	
+}
+
+.half-banner {
+	height: 480px;
+	width: 50%;
+	background-color: blue;
+	float: left;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+}
+
+/* Footer */
+
+.full-width {
+  max-width: 1400px;
+}
+
+.footer {
+	background-color: #666;
+	padding: 2rem 4rem;
+}
+
+

@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: nominations
+#
+#  id              :integer          not null, primary key
+#  created_at      :datetime
+#  updated_at      :datetime
+#  submitter_name  :string(255)
+#  submitter_email :string(255)
+#  description     :text
+#  speaker_id      :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speaker_name: MyString
+  speaker_description: MyText
+  speaker_email: MyString
+
+two:
+  speaker_name: MyString
+  speaker_description: MyText
+  speaker_email: MyString

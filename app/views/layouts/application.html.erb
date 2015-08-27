@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tedxberkeley</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'vendor/modernizr' %>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/foundation.css" />
+  </head>
+  <body>
+    <nav class="top-bar" data-top-bar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "TEDxBerkeley", static_home_path %></h1>
+        </li>
+      </ul>
+      <div class="top-bar-section">
+        <ul class="right">
+          <li><%= link_to "Team", static_team_path %></li>
+          <li><%= link_to "Speakers", speakers_path %></li>
+          <li><%= link_to "About", static_about_path %></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+      <div class="row full-width">
+        This is the TEDxBerkeley footer. There should be links to contact information, about pages, and maybe something legal. Not sure. 
+      </div>
+    </footer>
+  </body>
+</html>

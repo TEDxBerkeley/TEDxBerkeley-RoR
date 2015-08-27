@@ -1,0 +1,33 @@
+<div class="thin-banner">
+  <h1> Nominate a Speaker </h1>
+  <h3> Now's your chance to help us choose next year's line up. Have someone that you think would make an excellent speaker at TEDxBerkeley? Submit a nomination here! </h3>
+</div>
+
+<div class="nomination-banner">
+  <%= form_for :nominations, url: nominations_path do |f| %>
+    <div class="row">
+    <div class="large-6 medium-6 columns">
+      <%= f.text_field :submitter_name, placeholder:"Your Name" %>
+    </div>
+    <div class="large-6 medium-6 columns">
+        <%= f.text_field :submitter_email, placeholder:"Your Email" %>
+      </div>
+    </div>
+    <div class="row">
+    <div class="large-6 medium-6 columns">
+        <%= f.text_field :speaker_name, placeholder:"Speaker Name" %>
+      </div>
+      <div class="large-6 medium-6 columns">
+        <%= f.text_field :speaker_email, placeholder:"Speaker Email" %>
+      </div>
+    </div>
+    <div class="row">
+      <%= f.text_area :description, placeholder:"Speaker Description" %>
+    </div>
+    <div class="row">
+      <div class="center">
+        <%= f.submit "Submit Nomination!", :class=>"small round button" %>
+      </div>
+    </div>
+  <% end %>
+</div>

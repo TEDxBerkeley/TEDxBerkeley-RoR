@@ -1,0 +1,12 @@
+<div class="thin-banner">
+	<h1> Team </h1>
+	<p> This is a description of our great Team! </p>
+</div>
+
+<% @users.each do |user| %>
+	<%= link_to user do %>
+	<div class="user-box">
+		<p><%= user.name %></p>
+	</div>
+	<% end %>
+<% end %>

@@ -1,0 +1,18 @@
+// Place all the styles related to the speakers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.speaker-box {
+	background: blue;
+	float: left;
+	height: 192px;
+	width: 192px;
+	padding: 5px;
+}
+
+.speaker-box:hover {
+	background: orange;
+	height: 192px;
+	width: 192px;
+	padding: 5px;
+}
