@@ -4,7 +4,7 @@ class SpeakersController < ApplicationController
   end
 
   def index
-    @speakers = Speaker.all
+    @speakers = Speaker.where(approved: true)
   end
 
   def show

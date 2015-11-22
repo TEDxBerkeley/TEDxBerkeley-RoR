@@ -19,6 +19,13 @@
 	min-height: 600px;
 }
 
+.container:after{
+  content:".";
+  display:block;
+  clear:left;
+  visibility:hidden;
+}
+
 body {
     /* background-image: image-url('zellerbach.jpg'); */
     /* background-size: contain; */

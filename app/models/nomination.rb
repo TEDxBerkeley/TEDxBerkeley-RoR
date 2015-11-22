@@ -14,5 +14,6 @@
 class Nomination < ActiveRecord::Base
   validates :submitter_name, presence: true
   validates :submitter_email, presence: true
+
   belongs_to :speaker
 end

@@ -8,6 +8,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  approved    :boolean
 #
 
 class Speaker < ActiveRecord::Base

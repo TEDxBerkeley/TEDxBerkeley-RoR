@@ -16,3 +16,18 @@ form {
 	padding-top: 20px;
 	background-color: #EE7600;
 }
+
+.nom-box {
+	background: blue;
+	float: left;
+	height: 192px;
+	width: 192px;
+	padding: 5px;
+}
+
+.nom-box:hover {
+	background: orange;
+	height: 192px;
+	width: 192px;
+	padding: 5px;
+}
