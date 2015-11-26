@@ -2,13 +2,14 @@
 #
 # Table name: speakers
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  email       :string
-#  description :text
-#  created_at  :datetime
-#  updated_at  :datetime
-#  approved    :boolean
+#  id                :integer          not null, primary key
+#  approved          :boolean
+#  description       :text
+#  email             :string
+#  name              :string
+#  created_at        :datetime
+#  updated_at        :datetime
+#  {:index=>true}_id :integer
 #
 
 class Speaker < ActiveRecord::Base

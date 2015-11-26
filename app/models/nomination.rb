@@ -3,12 +3,11 @@
 # Table name: nominations
 #
 #  id              :integer          not null, primary key
-#  created_at      :datetime
-#  updated_at      :datetime
 #  submitter_name  :string
 #  submitter_email :string
 #  description     :text
-#  speaker_id      :integer
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 
 class Nomination < ActiveRecord::Base
