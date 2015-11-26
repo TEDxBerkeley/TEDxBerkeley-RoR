@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require foundation
  *= require_tree .
  *= require_self
  */
@@ -74,7 +73,7 @@ body p {
 	background: red;
 }
 
-/* Banner Styling --- TODO: Look up how to inherit CSS styles .banner -> .thin-banner; */ 
+/* Banner Styling --- TODO: Look up how to inherit CSS styles .banner -> .thin-banner; */
 
 .banner {
 	height: 480px;
@@ -89,7 +88,7 @@ body p {
 	width: 100%;
 	background-color: orange;
 	padding-left: 20px;
-	padding-top: 20px;	
+	padding-top: 20px;
 }
 
 .half-banner {
