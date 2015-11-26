@@ -1,9 +1,12 @@
 class CreateNominations < ActiveRecord::Migration
   def change
     create_table :nominations do |t|
-      t.string :speaker_name
-      t.text :speaker_description
-      t.string :speaker_email
+
+      t.string :submitter_name
+      t.string :submitter_email
+      t.text :description
+
+      add_reference :speakers, index: true
 
       t.timestamps
     end

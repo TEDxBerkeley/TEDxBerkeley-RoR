@@ -3,10 +3,10 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  email           :string(255)
-#  name            :string(255)
-#  password_digest :string(255)
-#  username        :string(255)
+#  email           :string
+#  name            :string
+#  password_digest :string
+#  username        :string
 #
 
 require 'test_helper'

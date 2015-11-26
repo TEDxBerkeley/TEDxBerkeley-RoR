@@ -3,18 +3,17 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  email           :string(255)
-#  name            :string(255)
-#  password_digest :string(255)
-#  username        :string(255)
+#  email           :string
+#  name            :string
+#  password_digest :string
+#  username        :string
 #
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :confirmable, :database_authenticatable, :recoverable,
-         :registerable, :rememberable, :trackable, :validatable
-
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true
   validates :first_name, presence: true
