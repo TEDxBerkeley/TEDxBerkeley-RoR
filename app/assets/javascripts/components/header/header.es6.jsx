@@ -32,12 +32,13 @@ class Header extends Component {
     return {
       default: {
         display: 'flex',
-        flex: '1',
         alignItems: 'center',
         alignSelf: 'stretch',
+        width: '260px',
         padding: '0px 12px',
         color: StyleConstants.colors.black,
         textDecoration: 'None',
+        backgroundColor: StyleConstants.colors.white,
       },
     };
   }
@@ -58,10 +59,12 @@ class Header extends Component {
 
   render() {
     return (
-      <Clickable
-        content={'TEDxBerkeley'}
-        styles={this.clickableStyles}
-        type={'h1'} />
+      <div style={this.styles.container}>
+        <Clickable
+          content={'TEDxBerkeley'}
+          styles={this.clickableStyles}
+          type={'h1'} />
+      </div>
     );
   }
 }
