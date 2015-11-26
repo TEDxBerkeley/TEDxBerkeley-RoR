@@ -14,7 +14,7 @@ class Header extends Component {
         zIndex: StyleConstants.planes.eight,
         width: '100%',
         height: '48px',
-        backgroundColor: StyleConstants.colors.blue,
+        backgroundColor: StyleConstants.colors.white,
         boxShadow: '0px 0px 5px 0px rgba(0, 0, 0, 0.25)',
       },
       sidebar: {
@@ -31,13 +31,13 @@ class Header extends Component {
   get clickableStyles() {
     return {
       default: {
-        padding: '8px',
-        marginLeft: '8px',
-        color: StyleConstants.colors.opaque,
-        fontSize: '20px',
-      },
-      hover: {
-        color: StyleConstants.colors.white,
+        display: 'flex',
+        flex: '1',
+        alignItems: 'center',
+        alignSelf: 'stretch',
+        padding: '0px 12px',
+        color: StyleConstants.colors.black,
+        textDecoration: 'None',
       },
     };
   }
@@ -58,11 +58,10 @@ class Header extends Component {
 
   render() {
     return (
-      <div style={this.styles.container}>
-        <div style={this.styles.sidebar}>
-          {this.renderToggler()}
-        </div>
-      </div>
+      <Clickable
+        content={'TEDxBerkeley'}
+        styles={this.clickableStyles}
+        type={'h1'} />
     );
   }
 }

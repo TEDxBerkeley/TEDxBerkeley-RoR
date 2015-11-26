@@ -12,7 +12,8 @@ class HomePage extends Component {
   // --------------------------------------------------
   render() {
     return (
-      <div>
+      <div style={StyleConstants.pages.default}>
+        <Header />
         <div class="banner" id="home-banner">
           <div id="title-box">
             <h1> TEDxBerkeley </h1>

@@ -5,6 +5,7 @@
       return {
         ash: '#565a5c',
         azure: '#78c1ee',
+        black: '#000000',
         blue: '#68b1de',
         fog: 'rgba(255, 255, 255, 0.95)',
         gray: '#d6d6d6',

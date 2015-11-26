@@ -1,0 +1,130 @@
+$ash: #565a5c;
+$azure: #78c1ee;
+$blue: #68b1de;
+$fog: rgba(255, 255, 255, 0.95);
+$gray: #d6d6d6;
+$indigo: #28719e;
+$opaque: rgba(255, 255, 255, 0.875);
+$turquoise: #c1d6d8;
+$white: #ffffff;
+
+$font-family: 'Montserrat', sans-serif;
+
+$font-size-largest: 36px;
+$font-size-larger: 30px;
+$font-size-large: 24px;
+$font-size-medium: 18px;
+$font-size-small: 16px;
+$font-size-smaller: 14px;
+$font-size-smallest: 12px;
+
+$font-weight-large: 700;
+$font-weight-medium: 400;
+
+a,
+body,
+div,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+i,
+input,
+label,
+ol,
+p,
+span,
+textarea,
+ul {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  color: $ash;
+  outline: none;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #eaf0f2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline-block;
+  font-family: $font-family;
+  font-weight: $font-weight-medium;
+}
+
+h1 {
+  font-size: $font-size-larger;
+  line-height: $font-size-largest;
+}
+
+h2 {
+  font-size: $font-size-large;
+  line-height: $font-size-larger;
+}
+
+h3 {
+  font-size: $font-size-medium;
+  line-height: $font-size-large;
+}
+
+h4 {
+  font-size: $font-size-small;
+  line-height: $font-size-medium;
+}
+
+h5 {
+  font-size: $font-size-smaller;
+  line-height: $font-size-medium;
+}
+
+h6 {
+  font-size: $font-size-smallest;
+  line-height: $font-size-medium;
+}
+
+i {
+  color: inherit;
+}
+
+a,
+input,
+label,
+li,
+p,
+span {
+  font-family: $font-family;
+  font-size: $font-size-smallest;
+  font-weight: $font-weight-medium;
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+}
+
+input,
+textarea {
+  border: 1px solid $gray;
+  -webkit-transition: all 0.375s ease-in-out;
+  -moz-transition: all 0.375s ease-in-out;
+  -ms-transition: all 0.375s ease-in-out;
+  -o-transition: all 0.375s ease-in-out;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid $blue;
+  box-shadow: 0 0 3px $blue;
+}
