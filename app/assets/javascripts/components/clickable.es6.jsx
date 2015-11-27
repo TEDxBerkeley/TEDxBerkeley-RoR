@@ -161,7 +161,8 @@ class Clickable extends Component {
       return (
         <a
           href={props.route}
-          ref={'container'}>
+          ref={'container'}
+          style={style}>
           {this.renderContent(style)}
           {this.renderChildren()}
         </a>

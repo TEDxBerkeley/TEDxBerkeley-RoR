@@ -20,13 +20,15 @@ Rails.application.routes.draw do
   end
 
   get 'team' , to: 'users#index', as: :static_team
-  get    'home'     => 'static_pages#home', as: :static_home
-  get    'about'    =>'static_pages#about', as: :static_about
-  get    'nominate' => 'nominations#new'
-  get    'signup'   => 'users#new'
-  get    'login'    => 'sessions#new'
-  post   'login'    => 'sessions#create'
-  delete 'logout'   => 'sessions#destroy'
+  get    'home', to:'static_pages#home', as: :static_home
+  get    'about', to:'static_pages#about', as: :static_about
+  get    'nominate', to: 'nominations#new'
+  get    'signup', to: 'users#new'
+  get    'login', to:'sessions#new'
+  post   'login', to:'sessions#create'
+  delete 'logout', to:'sessions#destroy'
+
+  get 'tickets', to: redirect('http://www.tedxberkeley2016.eventbrite.com')
 end
 
 

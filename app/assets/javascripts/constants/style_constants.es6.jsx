@@ -7,6 +7,7 @@
         azure: '#78c1ee',
         black: '#000000',
         blue: '#68b1de',
+        darkGrey: '#383838',
         fog: 'rgba(255, 255, 255, 0.95)',
         gray: '#d6d6d6',
         indigo: '#28719e',
@@ -50,6 +51,12 @@
           height: '100vh',
         },
       };
+    }
+
+    get size() {
+      return {
+        header_height: '48px',
+      }
     }
 
     get planes() {

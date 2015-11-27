@@ -1,6 +1,22 @@
 class Header extends Component {
 
   // --------------------------------------------------
+  // Props
+  // --------------------------------------------------
+
+  static get propTypes() {
+    return {
+      showSidebar: React.PropTypes.bool.isRequired,
+    };
+  }
+
+  static get defaultProps() {
+    return {
+      showSidebar: false,
+    };
+  }
+
+  // --------------------------------------------------
   // Styles
   // --------------------------------------------------
   get styles() {
@@ -13,7 +29,7 @@ class Header extends Component {
         left: '0px',
         zIndex: StyleConstants.planes.eight,
         width: '100%',
-        height: '48px',
+        height: StyleConstants.size.header_height,
         backgroundColor: StyleConstants.colors.white,
         boxShadow: '0px 0px 5px 0px rgba(0, 0, 0, 0.25)',
       },
@@ -64,6 +80,7 @@ class Header extends Component {
           content={'TEDxBerkeley'}
           styles={this.clickableStyles}
           type={'h1'} />
+        <HeaderNavigation />
       </div>
     );
   }
