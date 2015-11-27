@@ -42,23 +42,27 @@ class HeaderNavigation extends Component {
   get clickableStyles() {
     return {
       default: {
-        padding: '8px',
-        marginLeft: '8px',
-        color: StyleConstants.colors.darkGrey,
+        display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '126px',
+          height: StyleConstants.size.header_height,
+          color: StyleConstants.colors.darkGrey,
+          backgroundColor: StyleConstants.colors.white,
       },
       hover: {
-        color: StyleConstants.colors.darkGrey,
+        color: StyleConstants.colors.white,
+        backgroundColor: StyleConstants.colors.red,
       },
       tickets: {
         default: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '126px',
-        height: StyleConstants.size.header_height,
-        backgroundColor: StyleConstants.colors.red,
-        color: StyleConstants.colors.white,
-        fontSize: StyleConstants.fonts.medium,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '126px',
+          height: StyleConstants.size.header_height,
+          backgroundColor: StyleConstants.colors.red,
+          color: StyleConstants.colors.white,
       },
       hover: {
         backgroundColor: StyleConstants.colors.white,
@@ -145,10 +149,23 @@ class HeaderNavigation extends Component {
           styles={this.clickableStyles.tickets}
           type={'h4'} />,
         <Clickable
-          action={this.handleClick}
-          icon={'fa fa-bars fa-x'}
+          key={2}
+          content={'SPEAKERS'}
+          route={RouteConstants.speakers.index}
           styles={this.clickableStyles}
-          type={'i'} />
+          type={'h4'} />,
+        <Clickable
+          key={3}
+          content={'TEAM'}
+          route={RouteConstants.team.index}
+          styles={this.clickableStyles}
+          type={'h4'} />,
+        <Clickable
+          key={4}
+          content={'ABOUT'}
+          route={RouteConstants.pages.about}
+          styles={this.clickableStyles}
+          type={'h4'} />,
       ];
     }
   }

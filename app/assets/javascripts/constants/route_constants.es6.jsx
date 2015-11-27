@@ -9,6 +9,7 @@
 
     get pages() {
       return {
+        about: '/about',
         login: '/login',
         signup: '/signup',
         contact: '/contact',
