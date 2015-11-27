@@ -78,6 +78,7 @@ class Header extends Component {
       <div style={this.styles.container}>
         <Clickable
           content={'TEDxBerkeley'}
+          route={RouteConstants.pages.home}
           styles={this.clickableStyles}
           type={'h1'} />
         <HeaderNavigation />

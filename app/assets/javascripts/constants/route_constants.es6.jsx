@@ -10,9 +10,10 @@
     get pages() {
       return {
         about: '/about',
+        contact: '/contact',
+        home: '/',
         login: '/login',
         signup: '/signup',
-        contact: '/contact',
       };
     }
 

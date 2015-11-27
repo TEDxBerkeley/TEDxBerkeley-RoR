@@ -9,14 +9,11 @@ class HomePage extends Component {
         display: 'flex',
         flex: '1',
         paddingTop: '48px',
-        paddingLeft: '196px',
       },
       body: {
         display: 'flex',
         flexFlow: 'column',
         flex: '1',
-        paddingLeft: '12px',
-        paddingRight: '208px',
         overflow: 'scroll',
       },
     };
