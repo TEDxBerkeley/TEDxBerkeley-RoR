@@ -10,6 +10,14 @@ class SpeakersController < ApplicationController
   def show
     @speaker = Speaker.find(params[:id])
   end
+
+  def speaker_params
+    params.require(:speaker).permit(
+      :description,
+      :email,
+      :name,
+    )
+  end
 end
 
 

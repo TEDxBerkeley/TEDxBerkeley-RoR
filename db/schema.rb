@@ -20,9 +20,12 @@ ActiveRecord::Schema.define(version: 20151126020129) do
     t.string   "submitter_name"
     t.string   "submitter_email"
     t.text     "description"
+    t.integer  "speakers_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "nominations", ["speakers_id"], name: "index_nominations_on_speakers_id", using: :btree
 
   create_table "speakers", force: :cascade do |t|
     t.boolean  "approved"
@@ -31,7 +34,6 @@ ActiveRecord::Schema.define(version: 20151126020129) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "{:index=>true}_id"
   end
 
   create_table "users", force: :cascade do |t|

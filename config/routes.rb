@@ -22,11 +22,12 @@ Rails.application.routes.draw do
   get 'team' , to: 'users#index', as: :static_team
   get 'home', to:'static_pages#home', as: :static_home
   get 'about', to:'static_pages#about', as: :static_about
-  get 'nominate', to: 'nominations#new'
-  get 'signup', to: 'users#new'
-  get 'login', to:'sessions#new'
-  post 'login', to:'sessions#create'
-  delete 'logout', to:'sessions#destroy'
+
+  namespace :api do
+    resources :speakers, only: [:create, :index, :show]
+    resources :team, only: [:create, :index, :show, :update]
+    resources :users, only: [:index, :update]
+  end
 
   get 'tickets', to: redirect('http://www.tedxberkeley2016.eventbrite.com')
 end
