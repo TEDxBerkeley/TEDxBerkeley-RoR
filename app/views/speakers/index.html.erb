@@ -1,13 +1,1 @@
 <%= react_component('SpeakersPage') %>
-
-<div class="thin-banner">
-	<h1> Speakers </h1>
-	<p> This is a description of the great speakers who will be coming to TEDxBerkeley 2016 </p>
-</div>
-<% @speakers.each do |speaker| %>
-	<%= link_to speaker do %>
-	<div class="speaker-box">
-		<p><%= speaker.name %> </p>
-	</div>
-	<% end %>
-<% end %>

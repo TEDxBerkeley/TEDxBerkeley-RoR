@@ -6,6 +6,7 @@
 #  submitter_name  :string
 #  submitter_email :string
 #  description     :text
+#  speakers_id     :integer
 #  created_at      :datetime
 #  updated_at      :datetime
 #

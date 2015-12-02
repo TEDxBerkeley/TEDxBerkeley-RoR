@@ -8,6 +8,7 @@ class SpeakersPage extends Component {
       container: {
         display: 'flex',
         flex: '1',
+        flexFlow: 'column',
         paddingTop: '48px',
       },
       body: {
@@ -27,6 +28,9 @@ class SpeakersPage extends Component {
       <div style={StyleConstants.pages.default}>
         <Header />
         <div style={this.styles.container}>
+          <SpeakerBanner
+              year={2016}
+            />
           <h1> Speakers Page! </h1>
         </div>
     </div>

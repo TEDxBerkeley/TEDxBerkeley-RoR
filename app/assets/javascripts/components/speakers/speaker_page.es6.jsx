@@ -7,6 +7,7 @@ class SpeakerPage extends Component {
     return {
       container: {
         display: 'flex',
+        flexFlow: 'column',
         flex: '1',
         paddingTop: '48px',
       },
