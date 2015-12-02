@@ -3,12 +3,12 @@
 # Table name: nominations
 #
 #  id              :integer          not null, primary key
+#  submitter_name  :string
+#  submitter_email :string
+#  description     :text
+#  speakers_id     :integer
 #  created_at      :datetime
 #  updated_at      :datetime
-#  submitter_name  :string(255)
-#  submitter_email :string(255)
-#  description     :text
-#  speaker_id      :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

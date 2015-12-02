@@ -11,32 +11,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826194006) do
+ActiveRecord::Schema.define(version: 20151126020129) do
 
-  create_table "nominations", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "nominations", force: :cascade do |t|
     t.string   "submitter_name"
     t.string   "submitter_email"
     t.text     "description"
-    t.integer  "speaker_id"
-  end
-
-  add_index "nominations", ["speaker_id"], name: "index_nominations_on_speaker_id"
-
-  create_table "speakers", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "description"
+    t.integer  "speakers_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string "email"
-    t.string "name"
-    t.string "password_digest"
-    t.string "username"
+  add_index "nominations", ["speakers_id"], name: "index_nominations_on_speakers_id", using: :btree
+
+  create_table "speakers", force: :cascade do |t|
+    t.boolean  "approved"
+    t.text     "description"
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

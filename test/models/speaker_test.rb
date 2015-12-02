@@ -3,9 +3,10 @@
 # Table name: speakers
 #
 #  id          :integer          not null, primary key
-#  name        :string(255)
-#  email       :string(255)
+#  approved    :boolean
 #  description :text
+#  email       :string
+#  name        :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #
