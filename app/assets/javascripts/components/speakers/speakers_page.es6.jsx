@@ -1,6 +1,14 @@
 class SpeakersPage extends Component {
 
   // --------------------------------------------------
+  // Setup
+  // --------------------------------------------------
+  constructor(props) {
+    super(props);
+    this._listener = (state) => this.setState(state);
+  }
+
+  // --------------------------------------------------
   // Styles
   // --------------------------------------------------
   get styles() {
@@ -21,8 +29,36 @@ class SpeakersPage extends Component {
   }
 
   // --------------------------------------------------
+  // Lifecycle
+  // --------------------------------------------------
+  componentWillMount() {
+    this.setState(SpeakersStore.getState());
+  }
+
+  componentDidMount() {
+    SpeakersStore.listen(this._listener);
+    SpeakersActions.fetchSpeakers();
+  }
+
+  componentWillUnmount() {
+    SpeakersStore.unlisten(this._listener);
+  }
+
+  // --------------------------------------------------
   // Render
   // --------------------------------------------------
+  renderSpeakerCard(speaker) {
+    return (
+      <SpeakersCard
+        key={speaker.id}
+        speaker={speaker} />
+    );
+  }
+
+  renderSpeakers() {
+    return this.state.speakers.map((speaker) => this.renderSpeakerCard(speaker));
+  }
+
   render() {
     return (
       <div style={StyleConstants.pages.default}>
@@ -32,6 +68,7 @@ class SpeakersPage extends Component {
               year={2016}
             />
           <h1> Speakers Page! </h1>
+          {this.renderSpeakers()}
         </div>
     </div>
     );
