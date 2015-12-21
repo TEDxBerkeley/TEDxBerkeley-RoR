@@ -28,6 +28,12 @@ class SpeakerPage extends Component {
       <div style={StyleConstants.pages.default}>
         <Header />
         <div style={this.styles.container}>
+          <SpeakerBanner
+            speaker=this.props.speaker
+          />
+          <SpeakerBody
+            speaker=this.props.speaker
+          />
           <h1> Speaker Page </h1>
         </div>
     </div>

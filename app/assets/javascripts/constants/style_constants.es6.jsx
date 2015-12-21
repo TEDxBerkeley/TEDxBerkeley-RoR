@@ -26,6 +26,18 @@
           borderColor: '#e5e6e9 #dfe0e4 #d0d1d5',
           borderRadius: '1px',
         },
+        grid: {
+          display: 'flex',
+          flexFlow: 'column',
+          width: '49%',
+          padding: '8px',
+          marginTop: '12px',
+          backgroundColor: this.colors.white,
+          border: '1px solid',
+          borderColor: '#e5e6e9 #dfe0e4 #d0d1d5',
+          borderRadius: '1px',
+          boxSizing: 'border-box',
+        },
       };
     }
 

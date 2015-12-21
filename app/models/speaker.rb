@@ -7,6 +7,7 @@
 #  description :text
 #  email       :string
 #  name        :string
+#  tagline     :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #

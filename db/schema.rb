@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151126020129) do
     t.text     "description"
     t.string   "email"
     t.string   "name"
+    t.string   "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

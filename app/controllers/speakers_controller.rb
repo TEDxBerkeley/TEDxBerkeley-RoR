@@ -16,6 +16,7 @@ class SpeakersController < ApplicationController
       :description,
       :email,
       :name,
+      :tagline,
     )
   end
 end

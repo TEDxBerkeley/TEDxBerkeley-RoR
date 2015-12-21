@@ -17,7 +17,7 @@ class SpeakersPage extends Component {
         display: 'flex',
         flex: '1',
         flexFlow: 'column',
-        paddingTop: '48px',
+        marginTop: '48px',
       },
       body: {
         display: 'flex',
@@ -47,17 +47,6 @@ class SpeakersPage extends Component {
   // --------------------------------------------------
   // Render
   // --------------------------------------------------
-  renderSpeakerCard(speaker) {
-    return (
-      <SpeakersCard
-        key={speaker.id}
-        speaker={speaker} />
-    );
-  }
-
-  renderSpeakers() {
-    return this.state.speakers.map((speaker) => this.renderSpeakerCard(speaker));
-  }
 
   render() {
     return (
@@ -66,9 +55,10 @@ class SpeakersPage extends Component {
         <div style={this.styles.container}>
           <SpeakerBanner
               year={2016}
-            />
-          <h1> Speakers Page! </h1>
-          {this.renderSpeakers()}
+          />
+          <SpeakersGrid
+            speakers={this.state.speakers}
+          />
         </div>
     </div>
     );

@@ -53,7 +53,6 @@ class SpeakerBanner extends Component {
   // Render
   // --------------------------------------------------
   render() {
-    console.log("Speaker Banner rendered.")
     return (
       <div style={this.styles.container}>
         <div style={this.styles.imageBanner}>

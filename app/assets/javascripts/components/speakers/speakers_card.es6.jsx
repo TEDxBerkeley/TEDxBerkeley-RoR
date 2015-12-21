@@ -20,19 +20,22 @@ class SpeakersCard extends Component {
         {
           flexFlow: 'row',
           justifyContent: 'flex-start',
+          marginLeft: '12px',
         }
       ),
+      colorStrip: {
+        width: '8px',
+        backgroundColor: 'red',
+      },
       image: {
         width: '128px',
         height: '128px',
-        borderRadius: '50%',
       },
       section: {
         display: 'flex',
         flexFlow: 'column',
-        justifyContent: 'center',
         flex: '1',
-        paddingLeft: '24px',
+        paddingLeft: '12px',
       },
     };
   }
@@ -53,6 +56,7 @@ class SpeakersCard extends Component {
     var speaker = this.props.speaker;
     return (
       <div style={this.styles.container}>
+        <div style={this.styles.colorStrip} />
         <Clickable
           styles={this.clickableStyles}
           route={RouteConstants.speakers.show(speaker.id)}
@@ -66,8 +70,8 @@ class SpeakersCard extends Component {
             content={`${speaker.name}`}
             route={RouteConstants.speakers.show(speaker.id)}
             styles={this.clickableStyles}
-            type={'h3'} />
-          <h6>{`${speaker.description}`}</h6>
+            type={'h2'} />
+          <h5>{`${speaker.tagline}`}</h5>
         </div>
       </div>
     );

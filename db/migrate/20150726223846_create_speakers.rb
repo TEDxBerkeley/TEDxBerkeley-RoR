@@ -6,6 +6,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.text :description
       t.string :email
       t.string :name
+      t.string :tagline
 
       t.timestamps
     end
