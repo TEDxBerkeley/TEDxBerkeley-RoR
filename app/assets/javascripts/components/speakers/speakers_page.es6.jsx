@@ -53,7 +53,7 @@ class SpeakersPage extends Component {
       <div style={StyleConstants.pages.default}>
         <Header />
         <div style={this.styles.container}>
-          <SpeakerBanner
+          <SpeakersBanner
               year={2016}
           />
           <SpeakersGrid

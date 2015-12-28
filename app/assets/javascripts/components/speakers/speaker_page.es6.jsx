@@ -1,6 +1,39 @@
 class SpeakerPage extends Component {
 
   // --------------------------------------------------
+  // Setup
+  // --------------------------------------------------
+  constructor(props) {
+    super(props);
+    this._listener = (state) => this.setState(state);
+  }
+
+  // --------------------------------------------------
+  // Props
+  // --------------------------------------------------
+  static get propTypes() {
+    return {
+      id: React.PropTypes.number.isRequired,
+    };
+  }
+
+  // --------------------------------------------------
+  // Lifecycle
+  // --------------------------------------------------
+  componentWillMount() {
+    this.setState(SpeakerStore.getState());
+  }
+
+  componentDidMount() {
+    SpeakerStore.listen(this._listener);
+    SpeakerActions.fetchSpeaker(this.props.id);
+  }
+
+  componentWillUnmount() {
+    SpeakerStore.unlisten(this._listener);
+  }
+
+  // --------------------------------------------------
   // Styles
   // --------------------------------------------------
   get styles() {
@@ -29,12 +62,11 @@ class SpeakerPage extends Component {
         <Header />
         <div style={this.styles.container}>
           <SpeakerBanner
-            speaker=this.props.speaker
+            speaker={this.state.speaker}
           />
           <SpeakerBody
-            speaker=this.props.speaker
+            speaker={this.state.speaker}
           />
-          <h1> Speaker Page </h1>
         </div>
     </div>
     );

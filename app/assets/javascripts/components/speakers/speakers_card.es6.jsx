@@ -54,6 +54,7 @@ class SpeakersCard extends Component {
   // --------------------------------------------------
   render() {
     var speaker = this.props.speaker;
+    console.log(speaker.id);
     return (
       <div style={this.styles.container}>
         <div style={this.styles.colorStrip} />

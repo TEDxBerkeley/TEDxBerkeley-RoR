@@ -1,4 +1,4 @@
-class SpeakerBanner extends Component {
+class SpeakersBanner extends Component {
 
   // --------------------------------------------------
   // Props
