@@ -17,7 +17,7 @@ class SpeakerBody extends Component {
       container: {
         display: 'flex',
         flexFlow: 'column',
-        minHeight: '600px',
+        minHeight: '400px',
         width: '100%',
         backgroundColor: StyleConstants.colors.white,
       },
@@ -29,7 +29,7 @@ class SpeakerBody extends Component {
         fontSize: StyleConstants.fonts.sizes.medium,
       },
       sectionHeader: {
-        marginLeft: '16px',
+        marginLeft: '32px',
         fontSize: StyleConstants.fonts.sizes.larger,
       },
       line: {
@@ -41,9 +41,8 @@ class SpeakerBody extends Component {
       description: {
         flex: 4,
         display: 'flex',
-        marginLeft: '16px',
-        marginTop: '8px',
-        fontSize: StyleConstants.fonts.sizes.large,
+        margin: '8px 32px',
+        fontSize: StyleConstants.fonts.sizes.medium,
       }
     };
   }

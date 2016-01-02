@@ -15,7 +15,7 @@ class ProjectsBanner extends Component {
         flexFlow: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '500px',
+        minHeight: '600px',
         width: '100%',
         padding: '100px 0px 32px 0px',
         backgroundColor: StyleConstants.colors.white,

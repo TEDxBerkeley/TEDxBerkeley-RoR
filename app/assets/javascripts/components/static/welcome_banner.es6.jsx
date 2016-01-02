@@ -10,7 +10,7 @@ class WelcomeBanner extends Component {
         flexFlow: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        minHeight: '300px',
+        minHeight: '700px',
         width: '100%',
         backgroundColor: StyleConstants.colors.white,
         padding: '64px 0px',

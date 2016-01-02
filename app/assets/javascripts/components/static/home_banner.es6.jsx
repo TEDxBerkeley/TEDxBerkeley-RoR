@@ -18,7 +18,7 @@ class HomeBanner extends Component {
         flexFlow: 'column',
         alignElements: 'center',
         justifyContent: 'center',
-        height: '400px',
+        height: '800px',
         color: StyleConstants.colors.white,
         backgroundImage: 'url("https://farm4.staticflickr.com/3759/13203367085_f0e4d12240_k.jpg")',
         overflow: 'hidden',

@@ -23,7 +23,7 @@ class SpeakersBanner extends Component {
       container: {
         display: 'flex',
         flexFlow: 'column',
-        minHeight: '400px',
+        minHeight: '500px',
         width: '100%',
       },
       imageBanner: {

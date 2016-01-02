@@ -18,7 +18,7 @@ class SpeakerBanner extends Component {
         display: 'flex',
         flexFlow: 'row',
         width: '100%',
-        padding: '16px',
+        padding: '16px 0px',
         backgroundColor: StyleConstants.colors.darkGrey,
       },
       image: {
