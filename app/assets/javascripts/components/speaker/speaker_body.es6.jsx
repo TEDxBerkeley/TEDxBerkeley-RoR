@@ -43,7 +43,7 @@ class SpeakerBody extends Component {
         display: 'flex',
         marginLeft: '16px',
         marginTop: '8px',
-        fontSize: StyleConstants.fonts.sizes.medium,
+        fontSize: StyleConstants.fonts.sizes.large,
       }
     };
   }
@@ -54,10 +54,10 @@ class SpeakerBody extends Component {
   render() {
     return (
       <div style={this.styles.container}>
-        <div style={this.styles.quote}> {this.props.speaker.description} </div>
-        <div style={this.styles.sectionHeader}> About This Speaker </div>
-        <span style={this.styles.line}/>
-        <div style={this.styles.description}> {this.props.speaker.description} </div>
+        <div style={this.styles.quote}><em>{this.props.speaker.quote}</em></div>
+        <div style={this.styles.sectionHeader}><strong>About This Speaker</strong></div>
+        <span style={this.styles.line} />
+        <div style={this.styles.description}>{this.props.speaker.description}</div>
         <ActionButtons />
       </div>
     );

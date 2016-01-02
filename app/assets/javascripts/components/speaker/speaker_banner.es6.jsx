@@ -25,7 +25,7 @@ class SpeakerBanner extends Component {
         flex: 1,
         display: 'flex',
         alignItems: 'center',
-        height: '360px',
+        minHeight: '360px',
         width: '360px',
       },
       links: {

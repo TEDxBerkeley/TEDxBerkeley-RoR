@@ -59,6 +59,7 @@ class SpeakersPage extends Component {
           <SpeakersGrid
             speakers={this.state.speakers}
           />
+        <Footer />
         </div>
     </div>
     );

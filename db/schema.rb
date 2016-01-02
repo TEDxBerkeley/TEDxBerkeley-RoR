@@ -29,7 +29,9 @@ ActiveRecord::Schema.define(version: 20151126020129) do
 
   create_table "speakers", force: :cascade do |t|
     t.boolean  "approved"
+    t.boolean  "has_quote"
     t.text     "description"
+    t.text     "quote"
     t.string   "email"
     t.string   "name"
     t.string   "tagline"

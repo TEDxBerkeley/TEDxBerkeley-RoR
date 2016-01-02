@@ -67,6 +67,7 @@ class SpeakerPage extends Component {
           <SpeakerBody
             speaker={this.state.speaker}
           />
+          <Footer />
         </div>
     </div>
     );

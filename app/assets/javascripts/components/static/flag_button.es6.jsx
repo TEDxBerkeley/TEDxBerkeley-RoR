@@ -22,7 +22,7 @@ class FlagButton extends Component {
         height: '200px',
         width: '250px',
         padding: '64px 8px',
-        margin: '16px',
+        margin: '64px',
         backgroundImage: `url(${this.props.image_link})`,
         boxShadow: '0px 0px 5px 0px rgba(0, 0, 0, 0.25)',
       },
@@ -40,10 +40,10 @@ class FlagButton extends Component {
   // --------------------------------------------------
   render() {
     return (
-      <div style={this.styles.container}>
+      <Clickable style={this.styles.container}>
         <div style={this.styles.title}>{this.props.title}</div>
         <div style={this.styles.description}>{this.props.description}</div>
-      </div>
+      </Clickable>
     );
   }
 }

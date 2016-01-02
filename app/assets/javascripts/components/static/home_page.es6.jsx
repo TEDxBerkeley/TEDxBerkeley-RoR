@@ -33,6 +33,7 @@ class HomePage extends Component {
           <WelcomeBanner />
           <ActionBanner />
           <ProjectsBanner />
+          <Footer />
         </div>
     </div>
     );

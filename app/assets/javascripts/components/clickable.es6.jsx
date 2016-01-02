@@ -11,6 +11,7 @@ class Clickable extends Component {
       icon: React.PropTypes.string,
       external: React.PropTypes.bool,
       route: React.PropTypes.string,
+      style: React.PropTypes.object,
       styles: React.PropTypes.shape({
         child: React.PropTypes.object,
         default: React.PropTypes.object,
@@ -154,7 +155,7 @@ class Clickable extends Component {
         <a
           href={this.props.route}
           ref={'container'}
-          style={style}>
+          style={this.props.style}>
           {this.renderContent(styles.child)}
           {this.renderChildren()}
         </a>
@@ -165,7 +166,7 @@ class Clickable extends Component {
           href={props.route}
           ref={'container'}
           target={"_blank"}
-          style={style}>
+          style={this.props.style}>
           {this.renderContent(style)}
           {this.renderChildren()}
         </a>);
@@ -174,7 +175,7 @@ class Clickable extends Component {
         <a
           href={props.route}
           ref={'container'}
-          style={style}>
+          style={this.props.style}>
           {this.renderContent(style)}
           {this.renderChildren()}
         </a>);

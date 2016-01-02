@@ -19,7 +19,8 @@ class SpeakersCard extends Component {
         StyleConstants.cards.grid,
         {
           flexFlow: 'row',
-          justifyContent: 'flex-start',
+          justifyContent: 'space-around',
+          minWidth: '400px',
           marginLeft: '12px',
         }
       ),
@@ -28,8 +29,8 @@ class SpeakersCard extends Component {
         backgroundColor: 'red',
       },
       image: {
-        width: '128px',
-        height: '128px',
+        width: '200px',
+        height: '200px',
       },
       section: {
         display: 'flex',
@@ -54,7 +55,6 @@ class SpeakersCard extends Component {
   // --------------------------------------------------
   render() {
     var speaker = this.props.speaker;
-    console.log(speaker.id);
     return (
       <div style={this.styles.container}>
         <div style={this.styles.colorStrip} />
