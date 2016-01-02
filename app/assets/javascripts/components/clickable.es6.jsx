@@ -9,7 +9,7 @@ class Clickable extends Component {
       content: React.PropTypes.string,
       children: React.PropTypes.node,
       icon: React.PropTypes.string,
-      external: React.PropTypes.boolean,
+      external: React.PropTypes.bool,
       route: React.PropTypes.string,
       styles: React.PropTypes.shape({
         child: React.PropTypes.object,

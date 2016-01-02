@@ -34,10 +34,8 @@ class SpeakerBody extends Component {
       },
       line: {
         height: '2px',
-        width: '100%',
-        marginLeft: '16px',
-        marginRight: '16px',
-        marginTop: '2px',
+        width: '70%',
+        margin: '2px 16px',
         backgroundColor: StyleConstants.colors.black,
       },
       description: {
