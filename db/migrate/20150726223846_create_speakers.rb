@@ -3,9 +3,12 @@ class CreateSpeakers < ActiveRecord::Migration
     create_table :speakers do |t|
 
       t.boolean :approved
+      t.boolean :has_quote
       t.text :description
+      t.text :quote
       t.string :email
       t.string :name
+      t.string :tagline
 
       t.timestamps
     end

@@ -4,9 +4,12 @@
 #
 #  id          :integer          not null, primary key
 #  approved    :boolean
+#  has_quote   :boolean
 #  description :text
+#  quote       :text
 #  email       :string
 #  name        :string
+#  tagline     :string
 #  created_at  :datetime
 #  updated_at  :datetime
 #

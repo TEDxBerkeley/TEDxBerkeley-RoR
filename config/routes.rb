@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create]
   resources :speakers, only: [:show, :index, :create]
+  resources :team_members, only: [:show, :index]
   resources :nominations
 
   devise_for :users, only: []
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :speakers, only: [:create, :index, :show]
-    resources :team, only: [:create, :index, :show, :update]
+    resources :team_members, only: [:create, :index, :show, :update]
     resources :users, only: [:index, :update]
   end
 

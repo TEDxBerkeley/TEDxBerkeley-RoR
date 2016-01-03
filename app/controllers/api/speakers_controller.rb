@@ -20,6 +20,7 @@ class Api::SpeakersController < Api::BaseController
       :description,
       :email,
       :name,
+      :tagline,
     )
   end
 end

@@ -19,9 +19,9 @@
 
     get team() {
       return {
-        index: '/team',
+        index: '/team_members',
         show: function(id) {
-          return `/team/${id}`;
+          return `/team_members/${id}`;
         },
       };
     }

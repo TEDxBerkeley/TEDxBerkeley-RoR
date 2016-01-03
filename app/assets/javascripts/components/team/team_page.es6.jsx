@@ -1,6 +1,14 @@
 class TeamPage extends Component {
 
   // --------------------------------------------------
+  // Setup
+  // --------------------------------------------------
+  constructor(props) {
+    super(props);
+    this._listener = (state) => this.setState(state);
+  }
+
+  // --------------------------------------------------
   // Styles
   // --------------------------------------------------
   get styles() {
@@ -8,6 +16,7 @@ class TeamPage extends Component {
       container: {
         display: 'flex',
         flex: '1',
+        flexFlow: 'column',
         paddingTop: '48px',
       },
       body: {
@@ -18,15 +27,40 @@ class TeamPage extends Component {
       },
     };
   }
+  // --------------------------------------------------
+  // Lifecycle
+  // --------------------------------------------------
+  componentWillMount() {
+    this.setState(TeamStore.getState());
+  }
+
+  componentDidMount() {
+    TeamStore.listen(this._listener);
+    TeamActions.fetchTeam();
+  }
+
+  componentWillUnmount() {
+    TeamStore.unlisten(this._listener);
+  }
 
   // --------------------------------------------------
   // Render
   // --------------------------------------------------
+
   render() {
     return (
       <div style={StyleConstants.pages.default}>
         <Header />
-      </div>
-      );
+        <div style={this.styles.container}>
+          <TeamBanner
+              year={2016}
+          />
+          <TeamGrid
+            teamMembers={this.state.team}
+          />
+        <Footer />
+        </div>
+    </div>
+    );
   }
 }

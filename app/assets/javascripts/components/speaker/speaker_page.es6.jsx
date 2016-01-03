@@ -1,4 +1,4 @@
-class SpeakersPage extends Component {
+class SpeakerPage extends Component {
 
   // --------------------------------------------------
   // Setup
@@ -9,15 +9,40 @@ class SpeakersPage extends Component {
   }
 
   // --------------------------------------------------
+  // Props
+  // --------------------------------------------------
+  static get propTypes() {
+    return {
+      id: React.PropTypes.number.isRequired,
+    };
+  }
+
+  // --------------------------------------------------
+  // Lifecycle
+  // --------------------------------------------------
+  componentWillMount() {
+    this.setState(SpeakerStore.getState());
+  }
+
+  componentDidMount() {
+    SpeakerStore.listen(this._listener);
+    SpeakerActions.fetchSpeaker(this.props.id);
+  }
+
+  componentWillUnmount() {
+    SpeakerStore.unlisten(this._listener);
+  }
+
+  // --------------------------------------------------
   // Styles
   // --------------------------------------------------
   get styles() {
     return {
       container: {
         display: 'flex',
-        flex: '1',
         flexFlow: 'column',
-        marginTop: '48px',
+        flex: '1',
+        paddingTop: '48px',
       },
       body: {
         display: 'flex',
@@ -29,37 +54,20 @@ class SpeakersPage extends Component {
   }
 
   // --------------------------------------------------
-  // Lifecycle
-  // --------------------------------------------------
-  componentWillMount() {
-    this.setState(SpeakersStore.getState());
-  }
-
-  componentDidMount() {
-    SpeakersStore.listen(this._listener);
-    SpeakersActions.fetchSpeakers();
-  }
-
-  componentWillUnmount() {
-    SpeakersStore.unlisten(this._listener);
-  }
-
-  // --------------------------------------------------
   // Render
   // --------------------------------------------------
-
   render() {
     return (
       <div style={StyleConstants.pages.default}>
         <Header />
         <div style={this.styles.container}>
-          <SpeakersBanner
-              year={2016}
+          <SpeakerBanner
+            speaker={this.state.speaker}
           />
-          <SpeakersGrid
-            speakers={this.state.speakers}
+          <SpeakerBody
+            speaker={this.state.speaker}
           />
-        <Footer />
+          <Footer />
         </div>
     </div>
     );
