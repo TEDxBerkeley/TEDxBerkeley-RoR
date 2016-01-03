@@ -3,9 +3,9 @@
 
     get team() {
       return {
-        index: '/team',
+        index: '/api/team_members',
         show: function(id) {
-          return `/api/team/${id}`;
+          return `/api/team_members/${id}`;
         },
       };
     }

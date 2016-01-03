@@ -9,7 +9,6 @@
     }
 
     handleStoreSpeaker(response) {
-      console.log(response);
       this.speaker = response;
     }
   }

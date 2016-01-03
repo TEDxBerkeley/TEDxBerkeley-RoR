@@ -3,7 +3,7 @@ class TeamMembersController < ApplicationController
   end
 
   def index
-    @members = TeamMember.where(approved: true)
+    @members = TeamMember.all
   end
 
   def show

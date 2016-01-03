@@ -27,7 +27,7 @@ class TeamGrid extends Component {
   // --------------------------------------------------
   renderMemberCard(member) {
     return (
-      <SpeakersCard
+      <MemberCard
         key={member.id}
         teamMember={member} />
     );

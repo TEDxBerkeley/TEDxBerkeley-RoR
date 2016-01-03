@@ -1,4 +1,4 @@
-class TeamCard extends Component {
+class MemberCard extends Component {
 
   // --------------------------------------------------
   // Props
@@ -54,7 +54,8 @@ class TeamCard extends Component {
   // Render
   // --------------------------------------------------
   render() {
-    var member = this.props.teaMember;
+    var member = this.props.teamMember;
+    console.log(member);
     return (
       <div style={this.styles.container}>
         <div style={this.styles.colorStrip} />
@@ -72,7 +73,7 @@ class TeamCard extends Component {
             route={RouteConstants.team.show(member.id)}
             styles={this.clickableStyles}
             type={'h2'} />
-          <h5>{`${member.tagline}`}</h5>
+          <h5>{`${member.role}`}</h5>
         </div>
       </div>
     );
