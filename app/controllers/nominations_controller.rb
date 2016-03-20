@@ -7,7 +7,7 @@ class NominationsController < ApplicationController
     @speaker = Speaker.new(name: nomination_params[:speaker_name],
                            email: nomination_params[:speaker_email],
                            description: nomination_params[:description])
-    speaker_save = @speaker.save
+    speaker_save = @speaker.save!
     @nomination = Nomination.create(submitter_name: nomination_params[:submitter_name],
                                  submitter_email: nomination_params[:submitter_email],
                                  description: nomination_params[:description],

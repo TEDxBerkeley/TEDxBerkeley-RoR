@@ -1,0 +1,20 @@
+<div class="banner">
+	<h1>Speaker</h1>
+	<h1><%= @speaker.name %></h1>
+	<p><%= @nomination.description %></p>
+
+	<h1>Submitter Name</h1>
+	<p><%= @nomination.submitter_name %></p>
+
+	<%= form_for(@nomination) do |f| %>
+
+	  <p> Publish speaker? </p>
+	  <%= f.label :speaker, "Yes" %>
+      <%= f.radio_button :speaker, true, checked: @speaker.approved? %>
+      <%= f.label :speaker, "No" %>
+      <%= f.radio_button :speaker, false, checked: !@speaker.approved? %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+</div>
+

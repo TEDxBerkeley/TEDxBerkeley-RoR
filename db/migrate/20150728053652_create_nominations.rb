@@ -6,7 +6,7 @@ class CreateNominations < ActiveRecord::Migration
       t.string :submitter_email
       t.text :description
 
-      t.references :speakers, index: true
+      t.references :speaker, index: true
 
       t.timestamps
     end

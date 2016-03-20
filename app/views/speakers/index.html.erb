@@ -1,1 +1,10 @@
-<%= react_component('SpeakersPage') %>
+<h1> Speakers </h1>
+
+<% @speakers.each do |speaker| %>
+  <%= link_to speaker do %>
+    <br />
+    <h2><%= speaker.name %> </h2> <br />
+    <%= speaker.description %> <br />
+    <%= speaker.email %> <br />
+  <% end %>
+<% end %>
