@@ -1,1 +1,7 @@
 <h1>Homepage</h1>
+<%= link_to "Nominations", nominations_path %>
+<%= link_to "Speakers", speakers_path %>
+<%= link_to "Team Members", team_members_path %>
+<%= link_to "Users", users_path %>
+<%= link_to "Sign In", new_user_session_path %>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

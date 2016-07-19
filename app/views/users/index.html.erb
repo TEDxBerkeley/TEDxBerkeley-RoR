@@ -1,14 +1,10 @@
-<%= react_component('TeamPage') %>
-
-<div class="thin-banner">
-	<h1> Team </h1>
-	<p> This is a description of our great Team! </p>
-</div>
+<h1>Users</h1>
+<%= link_to "New User", new_user_path %>
 
 <% @users.each do |user| %>
 	<%= link_to user do %>
-	<div class="user-box">
-		<p><%= user.name %></p>
-	</div>
+		<p><%= user.first_name %></p>
+    <p><%= user.last_name %></p>
+    <%= link_to "Delete User", user, method: :delete %>
 	<% end %>
 <% end %>

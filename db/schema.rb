@@ -17,23 +17,19 @@ ActiveRecord::Schema.define(version: 20160102192211) do
   enable_extension "plpgsql"
 
   create_table "nominations", force: :cascade do |t|
-    t.string   "submitter_name"
-    t.string   "submitter_email"
-    t.text     "description"
-    t.integer  "speaker_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "submitter_name",  null: false
+    t.string   "submitter_email", null: false
+    t.string   "speaker_name",    null: false
+    t.string   "speaker_email"
+    t.text     "description",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "nominations", ["speaker_id"], name: "index_nominations_on_speaker_id", using: :btree
-
   create_table "speakers", force: :cascade do |t|
-    t.boolean  "approved"
-    t.boolean  "has_quote"
-    t.text     "description"
-    t.text     "quote"
-    t.string   "email"
-    t.string   "name"
+    t.text     "description", null: false
+    t.string   "quote"
+    t.string   "name",        null: false
     t.string   "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"

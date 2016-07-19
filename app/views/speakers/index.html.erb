@@ -1,10 +1,13 @@
 <h1> Speakers </h1>
 
+<%= link_to "New", new_speaker_path %>
+
 <% @speakers.each do |speaker| %>
   <%= link_to speaker do %>
     <br />
     <h2><%= speaker.name %> </h2> <br />
     <%= speaker.description %> <br />
-    <%= speaker.email %> <br />
+    <%= link_to "Delete Speaker", speaker, method: :delete %>
+    <%= link_to "Edit Speaker", edit_speaker_path(speaker) %>
   <% end %>
 <% end %>
