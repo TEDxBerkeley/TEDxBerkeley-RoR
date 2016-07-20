@@ -1,14 +1,13 @@
-<div class="banner">
-	Nominations!
-</div>
+<h1> Nominations! </h1>
 
-<%= @nominations.each do |nomination| %>
+<%= link_to "New", new_nomination_path %>
+
+<% @nominations.each do |nomination| %>
 	<%= link_to nomination do %>
-		<div class="nom-box">
 			<p> Speaker </p>
-			<p><%= nomination.speaker.try(:name) %> </p>
+			<p><%= nomination.speaker_name %> </p>
 			<p> Nominated By </p>
 			<p><%= nomination.submitter_name %> </p>
-		</div>
+      <%= link_to "Delete Nomination", nomination, method: :delete %>
 	<% end %>
 <% end %>

@@ -1,0 +1,12 @@
+<h1> Team Members </h1>
+
+<%= link_to "New", new_team_member_path %>
+
+<% @members.each do |member| %>
+  <%= link_to member do %>
+    <%= member.name %>
+    <%= member.role %>
+    <%= link_to "Delete", member, method: :delete %>
+    <%= link_to "Edit", edit_team_member_path(member) %>
+  <% end %>
+<% end %>

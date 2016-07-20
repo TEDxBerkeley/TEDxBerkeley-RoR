@@ -17,23 +17,19 @@ ActiveRecord::Schema.define(version: 20160102192211) do
   enable_extension "plpgsql"
 
   create_table "nominations", force: :cascade do |t|
-    t.string   "submitter_name"
-    t.string   "submitter_email"
-    t.text     "description"
-    t.integer  "speakers_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "submitter_name",  null: false
+    t.string   "submitter_email", null: false
+    t.string   "speaker_name",    null: false
+    t.string   "speaker_email"
+    t.text     "description",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "nominations", ["speakers_id"], name: "index_nominations_on_speakers_id", using: :btree
-
   create_table "speakers", force: :cascade do |t|
-    t.boolean  "approved"
-    t.boolean  "has_quote"
-    t.text     "description"
-    t.text     "quote"
-    t.string   "email"
-    t.string   "name"
+    t.text     "description", null: false
+    t.string   "quote"
+    t.string   "name",        null: false
     t.string   "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,14 +44,14 @@ ActiveRecord::Schema.define(version: 20160102192211) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.boolean  "admin",                  default: false
+    t.string   "username"
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"

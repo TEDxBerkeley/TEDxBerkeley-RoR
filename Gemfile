@@ -1,6 +1,6 @@
-source 'https://rubygems.org'
-ruby '2.2.1'
+ruby '2.3.1'
 
+source 'https://rubygems.org'
 # Rails
 gem 'rails', '4.2.1'
 
@@ -11,7 +11,8 @@ gem 'figaro'
 gem 'kaminari', '~> 0.16.2'
 gem 'pg'
 gem 'pg_search'
-gem 'react-rails', '~> 1.4.0'
+gem 'cancancan', '~> 1.10'
+
 
 # Client
 gem 'jbuilder', '~> 2.0'

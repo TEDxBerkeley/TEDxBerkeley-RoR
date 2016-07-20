@@ -7,13 +7,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new user_params
     if @user.save
       log_in @user
       redirect_to @user
     else
       render 'new'
     end
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    authorize! :destroy, user
+    user.destroy
+    redirect_to users_path
   end
 
   def show
@@ -23,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
   # Confirms a logged-in user.
@@ -40,4 +47,3 @@ class UsersController < ApplicationController
     redirect_to(root_url) unless @user == current_user
   end
 end
-

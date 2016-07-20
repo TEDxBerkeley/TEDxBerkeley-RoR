@@ -3,8 +3,8 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  first_name             :string
-#  last_name              :string
+#  admin                  :boolean          default(FALSE), not null
+#  username               :string
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+
+  def admin?
+    self.admin
+  end
 end
