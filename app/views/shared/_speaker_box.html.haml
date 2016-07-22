@@ -1,0 +1,6 @@
+.speaker_box
+  =link_to speaker do
+    %p= speaker.name
+    %p= speaker.tagline
+  =link_to "Delete Speaker", speaker, method: :delete
+  =link_to "Edit Speaker", edit_speaker_path(speaker)

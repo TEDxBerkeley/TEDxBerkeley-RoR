@@ -13,8 +13,8 @@ gem 'pg'
 gem 'pg_search'
 gem 'cancancan', '~> 1.10'
 
-
 # Client
+gem 'haml'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'

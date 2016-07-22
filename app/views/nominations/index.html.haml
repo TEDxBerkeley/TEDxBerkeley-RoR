@@ -1,0 +1,13 @@
+%h1 Nominations!
+
+= link_to "New", new_nomination_path
+
+- @nominations.each do |nomination|
+  = link_to nomination do
+    .speaker_box
+      %p Speaker
+      = nomination.speaker_name
+      %p Nominated By
+      = nomination.submitter_name
+      - if can? :delete, Nomination
+        = link_to "Delete Nomination", nomination, method: :delete

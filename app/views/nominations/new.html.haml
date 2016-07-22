@@ -1,0 +1,13 @@
+.thin-banner
+  %h1 Nominate a Speaker
+  %p Now's your chance to help us choose next year's line up. Have someone that you think would make an excellent speaker at TEDxBerkeley? Submit a nomination here!
+
+= form_for :nomination, url: nominations_path do |f|
+  = f.text_field :submitter_name, placeholder:"Your Name"
+  = f.text_field :submitter_email, placeholder:"Your Email"
+  = f.text_field :speaker_name, placeholder:"Speaker Name"
+  = f.text_field :speaker_email, placeholder:"Speaker Email"
+  = f.text_area :description, placeholder:"Speaker Description"
+  = f.submit "Submit Nomination!", :class=>"small round button"
+
+
