@@ -1,0 +1,7 @@
+%h1 Speakers
+
+-if can? :create, Speaker
+  =link_to "New", new_speaker_path
+
+-@speakers.each do |speaker|
+  =render partial: 'shared/speaker_box', locals: { speaker: speaker }

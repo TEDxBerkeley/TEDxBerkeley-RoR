@@ -1,0 +1,9 @@
+%h1 Edit Speaker
+
+= form_for @speaker do |f|
+  = f.text_field :name
+  = f.text_field :tagline
+  = f.text_field :quote
+  = f.text_area :description
+  = f.submit "Update"
+

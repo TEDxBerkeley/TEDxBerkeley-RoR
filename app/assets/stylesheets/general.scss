@@ -1,3 +1,6 @@
+
+/* Colors
+------------ */
 $ash: #565a5c;
 $azure: #78c1ee;
 $blue: #68b1de;
@@ -8,6 +11,8 @@ $opaque: rgba(255, 255, 255, 0.875);
 $turquoise: #c1d6d8;
 $white: #ffffff;
 
+/* Fonts
+------------ */
 $font-family: 'Montserrat', sans-serif;
 
 $font-size-largest: 36px;
@@ -21,6 +26,8 @@ $font-size-smallest: 12px;
 $font-weight-large: 700;
 $font-weight-medium: 400;
 
+/* General ?
+----------------- */
 a,
 body,
 div,
@@ -52,6 +59,17 @@ body {
   min-height: 100vh;
   background-color: #eaf0f2;
 }
+
+a {
+  text-decoration: none;
+}
+
+right {
+  float: right;
+}
+
+/* Headers
+-------------- */
 
 h1,
 h2,
@@ -98,6 +116,8 @@ i {
   color: inherit;
 }
 
+/* Links
+-------------- */
 a,
 input,
 label,
@@ -107,11 +127,6 @@ span {
   font-family: $font-family;
   font-size: $font-size-smallest;
   font-weight: $font-weight-medium;
-}
-
-a {
-  display: flex;
-  text-decoration: none;
 }
 
 input,
@@ -127,4 +142,67 @@ input:focus,
 textarea:focus {
   border: 1px solid $blue;
   box-shadow: 0 0 3px $blue;
+}
+
+/* Navigation
+------------------ */
+
+nav {
+  width: 100%;
+  background: $white;
+
+  ul {
+     display: inline;
+     li {
+     	display: inline;
+	width: 30px;
+      }
+  }
+}
+
+.sign_in_box {
+  display: inline;
+  float: right;
+
+  li {
+     display: inline;
+  }
+
+}
+
+/* Footer
+----------------- */
+
+.footer {
+  background: $ash;
+
+  .content {
+    color: $white;
+    display: inline;
+  }
+
+  .right {
+    float: right;
+  }
+
+}
+
+/* Speaker Box
+---------------- */
+
+
+/* Team Member Box
+---------------- */
+.team_box {
+  background-color: $ash;
+  margin: 8px;
+  padding: 4px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $white;
+  }
 }

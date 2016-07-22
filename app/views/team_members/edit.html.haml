@@ -1,0 +1,7 @@
+%h1 Edit Team Member
+
+= form_for @member do |f|
+  = f.text_field :name
+  = f.text_field :role
+  = f.text_area :bio
+  = f.submit "Update"
