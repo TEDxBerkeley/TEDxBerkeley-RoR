@@ -11,5 +11,5 @@
 #  updated_at  :datetime         not null
 #
 
-class Sponser < ActiveRecord::Base
+class Sponsor < ActiveRecord::Base
 end

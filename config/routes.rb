@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   resources :speakers
   resources :team_members
   resources :nominations
+  resources :sponsors
 
   get 'home', to:'static_pages#home', as: :static_home
   get 'about', to:'static_pages#about', as: :static_about
+  get 'involve', to:'static_pages#involve', as: :static_involve
   get 'tickets', to: redirect('http://www.tedxberkeley2016.eventbrite.com')
 
 end

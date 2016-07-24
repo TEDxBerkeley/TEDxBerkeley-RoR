@@ -1,19 +1,24 @@
 
 /* Colors
 ------------ */
-$ash: #565a5c;
+$ash: #383838;
 $azure: #78c1ee;
 $black: #000000;
+$dark-purple: #020717;
 $blue: #68b1de;
 $fog: rgba(255, 255, 255, 0.95);
 $gray: #d6d6d6;
 $green: #4CBB17;
 $indigo: #28719e;
 $opaque: rgba(255, 255, 255, 0.875);
+$red_light: #c6949c;
+$red_dark: #800000;
 $ted_red: #e62e1b;
 $ted_red_light: #e35a50;
 $turquoise: #c1d6d8;
 $white: #ffffff;
+
+$off-gray: #484f60;
 
 /* Fonts
 ------------ */
@@ -22,7 +27,7 @@ $font-family: 'Montserrat', sans-serif;
 $font-size-largest: 36px;
 $font-size-larger: 30px;
 $font-size-large: 24px;
-$font-size-medium: 18px;
+$font-size-medium: 17px;
 $font-size-small: 16px;
 $font-size-smaller: 14px;
 $font-size-smallest: 12px;
@@ -30,7 +35,7 @@ $font-size-smallest: 12px;
 $font-weight-large: 700;
 $font-weight-medium: 400;
 
-/* General ?
+/* General
 ----------------- */
 a,
 body,
@@ -54,14 +59,14 @@ ul {
   position: relative;
   padding: 0;
   margin: 0;
-  color: $ash;
+  color: $white;
   outline: none;
 }
 
 body {
   width: 100vw;
   min-height: 100vh;
-  background-color: #eaf0f2;
+  background-color: $off-gray;
 }
 
 a {
@@ -120,6 +125,7 @@ i {
   color: inherit;
 }
 
+
 /* Links
 -------------- */
 a,
@@ -129,7 +135,7 @@ li,
 p,
 span {
   font-family: $font-family;
-  font-size: $font-size-smallest;
+  font-size: $font-size-medium;
   font-weight: $font-weight-medium;
 }
 
@@ -151,17 +157,76 @@ textarea:focus {
 /* Navigation
 ------------------ */
 
-nav {
-  background: $white;
+.white-top {
+  height: 48px;
+  background-color: $white;
+}
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 32px;
+  width: 100%;
+
+  a,
+  h1,
+  h2,
+  i,
+  p {
+    color: $ash;
+  }
+
+  background: $white;
   padding: 8px;
 
-  ul {
-     display: inline;
-     li {
-     	display: inline;
-	margin: 8px;
-      }
+  #logo {
+    margin-right: auto;
+  }
+
+  .tickets_button {
+    background-color: $ted_red;
+    padding: 8px;
+
+    h4 {
+      color: $white;
+    }
+  }
+
+  .draw_button {
+    margin: 0px 20px 0px 12px;
+    font-size: 24px;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 49px;
+  right: 0;
+  background-color: $ash;
+  overflow-x: hidden;
+  padding-top: 52px;
+  transition: 0.5s;
+  border-left:1px solid black;
+
+  li {
+    margin: 10px;
+    padding: 8px;
+  }
+
+  a,
+  h1,
+  h2,
+  h3,
+  p {
+    color: $white;
+    font-size: 20px;
   }
 }
 
@@ -169,18 +234,23 @@ nav {
 ----------------- */
 
 .footer {
-  background: $ash;
-  min-height: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: $dark-purple;
+  min-height: 56px;
   padding: 8px;
 
   .content {
     color: $white;
-    display: inline;
-    margin-right: 12px;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row wrap;
+    margin: 0px 4px;
   }
 
-  .right {
-    float: right;
+  .left {
+    margin-right: auto;
   }
 }
 
@@ -188,9 +258,24 @@ nav {
 /* Object General Index Presentation
 ---------------- */
 .object_box {
-  background-color: $ash;
-  margin: 8px;
+  display: flex;
+  flex: 1;
+  background-color: $dark-purple;
+  height: 100px;
   padding: 8px;
+  margin: 8px;
+  border-right: 6px solid $ted_red;
+
+  .content {
+    margin-right: 40px;
+  }
+
+  .highlight {
+    height: 100%;
+    width: 4px;
+    background-color: $ted_red;
+    overflow-x: hidden;
+  }
 
   a,
   h1,
@@ -205,7 +290,7 @@ nav {
 /* Homepage Banners
 ---------------------- */
 .short_banner {
-  background-color: $black;
+  background-color: $red_light;
   min-height: 400px;
 
   display: flex;
@@ -270,8 +355,15 @@ nav {
   }
 }
 
+.photo {
+  display: inline;
+  height: 100px;
+  width: 100px;
+  background-color: $green;
+}
+
 .year_banner {
-  background-color: $ash;
+  background-color: $dark-purple;
   padding: 4px;
 
   h1 {
@@ -391,11 +483,142 @@ nav {
 }
 
 .form-background {
-  height: 100%;
-  background-color: $green;
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 64px;
 
   h1,
   h2 {
     color: $white;
+  }
+}
+
+/* Swag Effects
+------------------- */
+.hvr-sweep-to-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $ted_red;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* Static Pages
+------------ */
+
+.static_content {
+  margin-top: 64px;
+  min-height: 600px;
+
+  h1,
+  h2 {
+    color: $ted_red;
+  }
+
+  p {
+    min-width: 330px;
+    max-width: 520px;
+    margin: 12px 0px 32px 32px;
+  }
+}
+
+/* Specific Indices
+------------ */
+.nomination {
+  display: flex;
+  flex: 1;
+  min-width: 90%;
+}
+
+.speaker {
+  display: flex;
+  flex: 1;
+  min-width: 30%;
+
+  .speaker_link {
+    display: flex;
+    flex-flow: row;
+    min-width: 80%;
+  }
+
+  .speaker_content {
+    margin-left: 12px;
+    display: inline;
+  }
+}
+
+.team {
+  display: flex;
+  flex: 1;
+  min-width: 99%;
+}
+
+.user {
+  display: flex;
+  flex: 1;
+  min-width: 30%;
+}
+
+/* Mobile
+-------------- */
+
+.wrapper {
+  display: flex;
+  flex-flow: wrap;
+
+  margin: 0px 120px;
+}
+
+@media screen
+and (min-width: 200px)
+and (max-width: 700px) {
+  .wrapper {
+    margin: 0px 10%;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .footer {
+    .content {
+      font-size: 12px;
+    }
   }
 }

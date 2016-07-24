@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160306185049) do
     t.datetime "updated_at"
   end
 
-  create_table "sponsers", force: :cascade do |t|
+  create_table "sponsors", force: :cascade do |t|
     t.string   "name"
     t.string   "website"
     t.string   "logo"

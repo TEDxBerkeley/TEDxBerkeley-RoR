@@ -1,13 +1,15 @@
 .short_banner
 
 .year_banner
-  %h1 Users
-  -if can? :create, User
-    = link_to "New User", new_user_registration_path
+  .wrapper
+    %h1 Users
+    -if can? :create, User
+      = link_to "New User", new_user_registration_path
 
-- @users.each do |user|
-  = link_to user do
-    .object_box
-      %p= user.email
-      - if can? :delete, User
-        = link_to "Delete User", user, method: :delete
+.wrapper
+  - @users.each do |user|
+    = link_to user, class: 'user' do
+      .object_box.hvr-sweep-to-left
+        %p= user.email
+        - if can? :delete, User
+          = link_to "Delete User", user, method: :delete

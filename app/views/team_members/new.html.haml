@@ -1,7 +1,8 @@
-%h1 New Team Member
+.form-background
+  %h1 New Team Member
 
-= form_for :team_member, url: team_members_path, html: {class: "new-form"} do |f|
-  = f.text_field :name, placeholder:"Name"
-  = f.text_field :role, placeholder:"Role"
-  = f.text_area :bio, placeholder:"Bio"
-  = f.submit "Submit", :class=>"small round button"
+  = form_for :team_member, url: team_members_path, html: {class: "new-form"} do |f|
+    = f.text_field :name, placeholder:"Name"
+    = f.text_field :role, placeholder:"Role"
+    = f.text_area :bio, placeholder:"Bio"
+    = f.submit "Submit", :class=>"small round button"
