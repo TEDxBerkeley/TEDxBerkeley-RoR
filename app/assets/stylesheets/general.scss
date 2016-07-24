@@ -3,11 +3,15 @@
 ------------ */
 $ash: #565a5c;
 $azure: #78c1ee;
+$black: #000000;
 $blue: #68b1de;
 $fog: rgba(255, 255, 255, 0.95);
 $gray: #d6d6d6;
+$green: #4CBB17;
 $indigo: #28719e;
 $opaque: rgba(255, 255, 255, 0.875);
+$ted_red: #e62e1b;
+$ted_red_light: #e35a50;
 $turquoise: #c1d6d8;
 $white: #ffffff;
 
@@ -148,26 +152,17 @@ textarea:focus {
 ------------------ */
 
 nav {
-  width: 100%;
   background: $white;
+
+  padding: 8px;
 
   ul {
      display: inline;
      li {
      	display: inline;
-	width: 30px;
+	margin: 8px;
       }
   }
-}
-
-.sign_in_box {
-  display: inline;
-  float: right;
-
-  li {
-     display: inline;
-  }
-
 }
 
 /* Footer
@@ -175,34 +170,232 @@ nav {
 
 .footer {
   background: $ash;
+  min-height: 24px;
+  padding: 8px;
 
   .content {
     color: $white;
     display: inline;
+    margin-right: 12px;
   }
 
   .right {
     float: right;
   }
-
 }
 
-/* Speaker Box
----------------- */
 
-
-/* Team Member Box
+/* Object General Index Presentation
 ---------------- */
-.team_box {
+.object_box {
   background-color: $ash;
   margin: 8px;
-  padding: 4px;
+  padding: 8px;
 
+  a,
   h1,
   h2,
   h3,
   h4,
   p {
+    color: $white;
+  }
+}
+
+/* Homepage Banners
+---------------------- */
+.short_banner {
+  background-color: $black;
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $white;
+  }
+}
+
+.action_button {
+  background-color: $ted_red;
+  max-width: 300px;
+  padding: 16px;
+}
+
+.banner {
+  background-color: $black;
+  min-height: 800px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $white;
+  }
+
+  .about_button {
+    background-color: $indigo;
+    max-width: 400px;
+    padding: 16px;
+  }
+
+  .float_frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+
+    .init_box {
+      display: flex;
+      align-items: center;
+
+      background-color: $green;
+      width: 200px;
+      height: 400px;
+      padding: 16px;
+      margin: 32px;
+    }
+  }
+}
+
+.year_banner {
+  background-color: $ash;
+  padding: 4px;
+
+  h1 {
+    color: $ted_red;
+  }
+
+  h2,
+  p,
+  a {
+    color: $white;
+  }
+}
+
+/* Forms
+----------------- */
+.new-form{
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.new-form fieldset{
+    border: none;
+}
+.new-form legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.new-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+.new-form input[type="text"],
+.new-form input[type="date"],
+.new-form input[type="datetime"],
+.new-form input[type="email"],
+.new-form input[type="number"],
+.new-form input[type="search"],
+.new-form input[type="time"],
+.new-form input[type="url"],
+.new-form textarea,
+.new-form select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+
+}
+.new-form input[type="text"]:focus,
+.new-form input[type="date"]:focus,
+.new-form input[type="datetime"]:focus,
+.new-form input[type="email"]:focus,
+.new-form input[type="number"]:focus,
+.new-form input[type="search"]:focus,
+.new-form input[type="time"]:focus,
+.new-form input[type="url"]:focus,
+.new-form textarea:focus,
+.new-form select:focus{
+    background: #d2d9dd;
+}
+.new-form select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.new-form .number {
+    background: #1abc9c;
+    color: $white;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.new-form input[type="submit"],
+.new-form input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: $white;
+    margin: 0 auto;
+    background: $ted_red_light;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid $ted_red;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.new-form input[type="submit"]:hover,
+.new-form input[type="button"]:hover
+{
+    background: $ted_red;
+}
+
+.form-background {
+  height: 100%;
+  background-color: $green;
+
+  h1,
+  h2 {
     color: $white;
   }
 }

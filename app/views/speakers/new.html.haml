@@ -1,9 +1,8 @@
 %h1 New Speaker
 
-= form_for :speaker, url: speakers_path do |f|
+= form_for :speaker, url: speakers_path, html: {class: "new-form"} do |f|
   = f.text_field :name, placeholder:"Name"
   = f.text_field :tagline, placeholder:"Tagline"
   = f.text_field :quote, placeholder:"Quote"
   = f.text_area :description, placeholder:"Description"
   = f.submit "Submit"
-

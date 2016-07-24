@@ -1,13 +1,17 @@
-%h1 Nominations!
+.short_banner
+  =link_to new_nomination_path do
+    %h1.action_button Nominate a Speaker!
 
-= link_to "New", new_nomination_path
+.year_banner
+  %h1= 2016
+  %h2 Nominations
 
 - @nominations.each do |nomination|
   = link_to nomination do
-    .speaker_box
+    .object_box
       %p Speaker
-      = nomination.speaker_name
+      %h3= nomination.speaker_name
       %p Nominated By
-      = nomination.submitter_name
+      %h3= nomination.submitter_name
       - if can? :delete, Nomination
         = link_to "Delete Nomination", nomination, method: :delete

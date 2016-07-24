@@ -1,7 +1,16 @@
-%h1 Speakers
+.short_banner
 
--if can? :create, Speaker
-  =link_to "New", new_speaker_path
+.year_banner
+  %h1= 2016
+  %h2 Speakers
+  -if can? :create, Speaker
+    =link_to "New", new_speaker_path
 
 -@speakers.each do |speaker|
-  =render partial: 'shared/speaker_box', locals: { speaker: speaker }
+  =link_to speaker do
+    .object_box
+      %h3= speaker.name
+      %p= speaker.tagline
+      -if can? [:destroy, :update], Speaker
+        =link_to "Delete Speaker", speaker, method: :delete
+        =link_to "Edit Speaker", edit_speaker_path(speaker)
