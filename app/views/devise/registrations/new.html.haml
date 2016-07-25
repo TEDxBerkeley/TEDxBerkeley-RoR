@@ -1,0 +1,11 @@
+.form-background
+
+  %h2 Sign up
+
+  = form_for(resource, as: resource_name, html: {class: "new-form"}, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .field= f.text_field :username, auto_focus: true, placeholder:"Username"
+    .field= f.email_field :email, placeholder:"Email"
+    .field= f.password_field :password, autocomplete: "off", placeholder:"Secure Password"
+    .field= f.password_field :password_confirmation, autocomplete: "off", placeholder:"Secure Password"
+    .actions= f.submit "Sign up"

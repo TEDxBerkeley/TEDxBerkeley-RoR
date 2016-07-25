@@ -1,0 +1,14 @@
+.short_banner
+  %h1 Events
+
+.wrapper
+  -if can? :create, Event
+    %h1=link_to "New", new_event_path
+  -@events.each do |event|
+    =link_to event, class: 'event' do
+      .object_box.hvr-sweep-to-left.event
+        %h1=event.theme
+        %h2=event.date.year
+        -if can? [:destroy, :update], TeamMember
+          =link_to "Delete", event, method: :delete
+          =link_to "Edit", edit_event_path(event)

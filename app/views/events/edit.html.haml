@@ -1,0 +1,9 @@
+.form-background
+
+  %h1 Edit Event
+
+  = form_for :event, url: events_path, html: {class: "new-form"} do |f|
+    = f.text_field :theme
+    = f.date_select :date
+    = f.text_area :description
+    = f.submit "Update"

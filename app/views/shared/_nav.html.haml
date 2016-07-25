@@ -6,7 +6,8 @@
   %i{class: "fa fa-bars draw_button", onclick: "moveNav()"}
   %div{class: "sidenav", id: "mySideNav"}
     %ul
-      %li= link_to "Speakers", speakers_path
+      %li= link_to "TEDxBerkeley #{@current_event.date.year}", event_path(@current_event)
+      %li= link_to "Events", events_path
       %li= link_to "Team", team_members_path
       %li= link_to "About", static_about_path
       %li= link_to "Get Involved", static_involve_path

@@ -2,10 +2,12 @@
   .static_content
     %h1 Get Involved!
     %p TED is an annual event where the world’s leading thinkers and doers are invited to share their passions. “TED” stands for Technology, Entertainment, Design–three broad subject areas that are shaping our future. Attendees have called it “the ultimate brain spa.” The diverse audience– CEOs, scientists, creatives, philanthropists–is almost as extraordinary as the speakers, who have included Bill Clinton, Bill Gates, Jane Goodall, Frank Gehry, Steve Jobs, Sir Richard Branson and Bono.
-    %h1 Suggest a Speaker
 
-    .reveal_box
-      %h1 Become a Sponsor
+    =link_to new_nomination_path do
+      %h1 Suggest a Speaker
 
-    %h1 Become a Volunteer
-    %p Please fill out this form to become a volunteer
+    =link_to 'mailto:info@tedxberkeley.org' do
+      %h1 Become a Volunteer
+
+    =link_to 'mailto:info@tedxberkeley.org' do
+      %h1 Become a Partner

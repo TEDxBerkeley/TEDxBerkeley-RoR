@@ -1,6 +1,7 @@
 class CreateSpeakers < ActiveRecord::Migration
   def change
     create_table :speakers do |t|
+      t.belongs_to :event, index: true
 
       t.text :description, null: false
       t.string :quote

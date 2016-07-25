@@ -1,5 +1,10 @@
-.banner
-	%p= @nomination.description
-
-	%h1 Submitter Name
-	%p= @nomination.submitter_name
+.focus_panel
+  .wrapper
+    .team_info
+      %h1 Speaker Name
+      %h2= @nomination.speaker_name
+      %h2= @nomination.speaker_website
+      %p= @nomination.description
+      %h1 Submitter
+      %h2= @nomination.submitter_name
+      %h2= @nomination.submitter_email

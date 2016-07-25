@@ -1,0 +1,27 @@
+.banner#event_banner
+  %h1= "TEDxBerkeley#{@event.date.year}"
+  %h2= @event.theme
+  %h2= @event.date.strftime("%B %d, %Y")
+  %p= @event.description
+  .action_button
+    %h3.ticket_button Buy Tickets Now!
+
+.year_banner
+  .wrapper
+    %h1= @event.date.year
+    %h2 Speakers
+    -if can? :create, Speaker
+      %h1= link_to "New Speaker", new_speaker_path
+
+.wrapper
+  -@event.speakers.each do |speaker|
+    .object_box.hvr-sweep-to-left.speaker
+      =link_to speaker, class: 'speaker_link' do
+        .photo
+        .speaker_content
+          %h3= speaker.name
+          %p= speaker.tagline
+      %br
+      -if can? [:destroy, :update], Speaker
+        =link_to "Delete", speaker, method: :delete
+        =link_to "Edit", edit_speaker_path(speaker)

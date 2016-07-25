@@ -9,6 +9,7 @@ class Ability
     else
       can :read, :all
       can [:create, :update], Nomination
+      cannot :read, Nomination
     end
   end
 end
