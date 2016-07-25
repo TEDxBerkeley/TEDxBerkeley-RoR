@@ -1,3 +1,18 @@
-%h1 Speaker Page!
-= @speaker.name
-= @speaker.description
+.focus_panel
+  .wrapper
+    .photo
+    .speaker_info
+      %h1= @speaker.name
+      %h3#tagline= @speaker.tagline
+      .extras
+        %h3= @speaker.website
+        %h3= @speaker.twitter
+.quote_box
+  %p= @speaker.quote
+.speaker_bio
+  %p#about_this_speaker About This Speaker
+  %p=@speaker.description
+.show_action_buttons
+  %h2.tickets_button Purchase Tickets
+  %h2.event_button More Information
+

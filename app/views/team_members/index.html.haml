@@ -1,13 +1,18 @@
-%h1 Team Members
+.short_banner
+  %h1 Team Members
 
--if can? :create, TeamMember
-  =link_to "New", new_team_member_path
+.year_banner
+  .wrapper
+    %h1= 2016
+    -if can? :create, TeamMember
+      %h1=link_to "New", new_team_member_path
 
--@members.each do |member|
-  =link_to member do
-    .team_box
-      %h4=member.name
-      %p=member.role
-      -if can? [:destroy, :update], TeamMember
-        =link_to "Delete", member, method: :delete
-        =link_to "Edit", edit_team_member_path(member)
+.wrapper
+  -@members.each do |member|
+    =link_to member, class: 'team' do
+      .object_box.hvr-sweep-to-left
+        %h3=member.name
+        %p=member.role
+        -if can? [:destroy, :update], TeamMember
+          =link_to "Delete", member, method: :delete
+          =link_to "Edit", edit_team_member_path(member)

@@ -6,6 +6,8 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :quote
       t.string :name, null: false
       t.string :tagline
+      t.string :twitter
+      t.string :website
 
       t.timestamps
     end

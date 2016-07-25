@@ -1,3 +1,10 @@
-=@member.name
-=@member.role
-=@member.bio
+.focus_panel
+  .wrapper
+    .photo
+    .team_info
+      %h1= @member.name
+      %h3= @member.role
+      %p#bio= @member.bio
+.show_action_buttons
+  %h2.tickets_button Purchase Tickets
+  %h2.event_button More Information

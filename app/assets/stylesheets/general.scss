@@ -1,15 +1,24 @@
 
 /* Colors
 ------------ */
-$ash: #565a5c;
+$ash: #383838;
 $azure: #78c1ee;
+$black: #000000;
+$dark-purple: #020717;
 $blue: #68b1de;
 $fog: rgba(255, 255, 255, 0.95);
 $gray: #d6d6d6;
+$green: #4CBB17;
 $indigo: #28719e;
 $opaque: rgba(255, 255, 255, 0.875);
+$red_light: #c6949c;
+$red_dark: #800000;
+$ted_red: #e62e1b;
+$ted_red_light: #e35a50;
 $turquoise: #c1d6d8;
 $white: #ffffff;
+
+$off-gray: #484f60;
 
 /* Fonts
 ------------ */
@@ -18,7 +27,7 @@ $font-family: 'Montserrat', sans-serif;
 $font-size-largest: 36px;
 $font-size-larger: 30px;
 $font-size-large: 24px;
-$font-size-medium: 18px;
+$font-size-medium: 17px;
 $font-size-small: 16px;
 $font-size-smaller: 14px;
 $font-size-smallest: 12px;
@@ -26,7 +35,7 @@ $font-size-smallest: 12px;
 $font-weight-large: 700;
 $font-weight-medium: 400;
 
-/* General ?
+/* General
 ----------------- */
 a,
 body,
@@ -50,14 +59,14 @@ ul {
   position: relative;
   padding: 0;
   margin: 0;
-  color: $ash;
+  color: $white;
   outline: none;
 }
 
 body {
   width: 100vw;
   min-height: 100vh;
-  background-color: #eaf0f2;
+  background-color: $off-gray;
 }
 
 a {
@@ -116,6 +125,7 @@ i {
   color: inherit;
 }
 
+
 /* Links
 -------------- */
 a,
@@ -125,7 +135,7 @@ li,
 p,
 span {
   font-family: $font-family;
-  font-size: $font-size-smallest;
+  font-size: $font-size-medium;
   font-weight: $font-weight-medium;
 }
 
@@ -147,62 +157,583 @@ textarea:focus {
 /* Navigation
 ------------------ */
 
-nav {
-  width: 100%;
-  background: $white;
+.white-top {
+  height: 48px;
+  background-color: $white;
+}
 
-  ul {
-     display: inline;
-     li {
-     	display: inline;
-	width: 30px;
-      }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  height: 32px;
+  width: 100%;
+
+  a,
+  h1,
+  h2,
+  i,
+  p {
+    color: $ash;
+  }
+
+  background: $white;
+  padding: 8px;
+
+  #logo {
+    margin-right: auto;
+  }
+
+  .tickets_button {
+    background-color: $ted_red;
+    padding: 8px;
+
+    h4 {
+      color: $white;
+    }
+  }
+
+  .draw_button {
+    margin: 0px 20px 0px 12px;
+    font-size: 24px;
   }
 }
 
-.sign_in_box {
-  display: inline;
-  float: right;
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 49px;
+  right: 0;
+  background-color: $ash;
+  overflow-x: hidden;
+  padding-top: 52px;
+  transition: 0.5s;
+  border-left:1px solid black;
 
   li {
-     display: inline;
+    margin: 10px;
+    padding: 8px;
   }
 
+  a,
+  h1,
+  h2,
+  h3,
+  p {
+    color: $white;
+    font-size: 20px;
+  }
 }
 
 /* Footer
 ----------------- */
 
 .footer {
-  background: $ash;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: $dark-purple;
+  min-height: 56px;
+  padding: 8px;
 
   .content {
     color: $white;
-    display: inline;
+    display: flex;
+    justify-content: flex-end;
+    flex-flow: row wrap;
+    margin: 0px 4px;
   }
 
-  .right {
-    float: right;
+  .left {
+    margin-right: auto;
   }
-
 }
 
-/* Speaker Box
----------------- */
 
-
-/* Team Member Box
+/* Object General Index Presentation
 ---------------- */
-.team_box {
-  background-color: $ash;
+.object_box {
+  display: flex;
+  flex: 1;
+  background-color: $dark-purple;
+  height: 100px;
+  padding: 8px;
   margin: 8px;
-  padding: 4px;
+  border-right: 6px solid $ted_red;
 
+  .content {
+    margin-right: 40px;
+  }
+
+  .highlight {
+    height: 100%;
+    width: 4px;
+    background-color: $ted_red;
+    overflow-x: hidden;
+  }
+
+  a,
   h1,
   h2,
   h3,
   h4,
   p {
     color: $white;
+  }
+}
+
+/* Homepage Banners
+---------------------- */
+.short_banner {
+  background-color: $red_light;
+  min-height: 400px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $white;
+  }
+}
+
+.action_button {
+  background-color: $ted_red;
+  max-width: 300px;
+  padding: 16px;
+}
+
+.banner {
+  background-color: $black;
+  min-height: 800px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $white;
+  }
+
+  .about_button {
+    background-color: $indigo;
+    max-width: 400px;
+    padding: 16px;
+  }
+
+  .float_frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+
+    .init_box {
+      display: flex;
+      align-items: center;
+
+      background-color: $green;
+      width: 200px;
+      height: 400px;
+      padding: 16px;
+      margin: 32px;
+    }
+  }
+}
+
+.photo {
+  display: inline;
+  height: 100px;
+  width: 100px;
+  background-color: $green;
+}
+
+.year_banner {
+  background-color: $dark-purple;
+  padding: 4px;
+
+  h1 {
+    color: $ted_red;
+  }
+
+  h2,
+  p,
+  a {
+    color: $white;
+  }
+}
+
+/* Forms
+----------------- */
+.new-form{
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.new-form fieldset{
+    border: none;
+}
+.new-form legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.new-form label {
+    display: block;
+    margin-bottom: 8px;
+}
+.new-form input[type="text"],
+.new-form input[type="date"],
+.new-form input[type="datetime"],
+.new-form input[type="email"],
+.new-form input[type="number"],
+.new-form input[type="search"],
+.new-form input[type="time"],
+.new-form input[type="url"],
+.new-form textarea,
+.new-form select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+
+}
+.new-form input[type="text"]:focus,
+.new-form input[type="date"]:focus,
+.new-form input[type="datetime"]:focus,
+.new-form input[type="email"]:focus,
+.new-form input[type="number"]:focus,
+.new-form input[type="search"]:focus,
+.new-form input[type="time"]:focus,
+.new-form input[type="url"]:focus,
+.new-form textarea:focus,
+.new-form select:focus{
+    background: #d2d9dd;
+}
+.new-form select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+.new-form .number {
+    background: #1abc9c;
+    color: $white;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0px;
+}
+
+.new-form input[type="submit"],
+.new-form input[type="button"]
+{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: $white;
+    margin: 0 auto;
+    background: $ted_red_light;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid $ted_red;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.new-form input[type="submit"]:hover,
+.new-form input[type="button"]:hover
+{
+    background: $ted_red;
+}
+
+.form-background {
+  display: flex;
+  align-items: center;
+  min-height: 560px;
+  padding: 64px;
+
+  h1,
+  h2 {
+    color: $white;
+  }
+}
+
+/* Swag Effects
+------------------- */
+.hvr-sweep-to-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $ted_red;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* Static Pages
+------------ */
+
+.static_content {
+  margin-top: 64px;
+  min-height: 600px;
+
+  h1,
+  h2 {
+    color: $ted_red;
+  }
+
+  p {
+    min-width: 330px;
+    max-width: 520px;
+    margin: 12px 0px 32px 32px;
+    line-height: 200%;
+  }
+}
+
+/* Specific Index View
+------------ */
+.nomination {
+  display: flex;
+  flex: 1;
+  min-width: 90%;
+}
+
+.speaker {
+  display: flex;
+  flex: 1;
+  min-width: 30%;
+
+  .speaker_link {
+    display: flex;
+    flex-flow: row;
+    min-width: 80%;
+  }
+
+  .speaker_content {
+    margin-left: 12px;
+    display: inline;
+  }
+}
+
+.team {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  min-width: 99%;
+}
+
+.user {
+  display: flex;
+  flex: 1;
+  min-width: 30%;
+}
+
+/* Specific Show View
+-------------- */
+
+.focus_panel {
+  display: flex;
+  flex-flow: wrap;
+  background-color: $dark-purple;
+  min-height: 300px;
+  width: 100%;
+  padding-top: 50px;
+
+  .photo {
+    .background-color: $green;
+    height: 250px;
+    width: 250px;
+  }
+
+  .speaker_info {
+    display: flex;
+    flex-flow: column;
+    margin-left: 30px;
+
+    #tagline {
+      margin-top: 20px;
+    }
+
+    .extras {
+      display: flex;
+      flex-flow: column;
+      margin-top: 120px;
+    }
+  }
+
+  .team_info {
+    display: flex;
+    flex-flow: column;
+
+    max-width: 70%;
+    margin-left: 30px;
+
+    #bio {
+      margin-top: 30px;
+    }
+  }
+}
+
+  #team {
+   min-height: 500px;
+ }
+
+.quote_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+  background-color: $white;
+
+  p {
+    color: $ash;
+  }
+}
+
+.speaker_bio {
+  background-color: $white;
+  padding: 30px 240px;
+
+  p {
+    padding-top: 20px;
+    color: $ash;
+    line-height: 200%;
+  }
+
+  #about_this_speaker {
+    border-bottom: solid 2px $black;
+  }
+}
+
+.show_action_buttons {
+  display: flex;
+  flex-flow: row;
+
+  min-height: 100px;
+
+  background-color: $dark-purple;
+  padding: 10%;
+
+  .tickets_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 32px;
+    margin-right: 16px;
+    background-color: $ted_red;
+  }
+
+  .event_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 32px;
+    background-color: $ash;
+  }
+}
+
+/* Mobile
+-------------- */
+
+.wrapper {
+  display: flex;
+  flex-flow: wrap;
+
+  margin: 0px 120px;
+}
+
+@media screen
+and (min-width: 200px)
+and (max-width: 700px) {
+  .wrapper {
+    margin: 0px 10%;
+  }
+
+  .speaker_bio {
+    padding: 0% 20%;
+  }
+
+  .photo {
+    display: none;
+  }
+
+  .footer {
+    .content {
+      font-size: 12px;
+    }
   }
 }
