@@ -5,7 +5,7 @@ class CreateNominations < ActiveRecord::Migration
       t.string :submitter_name, null: false
       t.string :submitter_email, null: false
       t.string :speaker_name, null: false
-      t.string :speaker_email
+      t.string :speaker_website
       t.text :description, null: false
 
       t.timestamps null: false

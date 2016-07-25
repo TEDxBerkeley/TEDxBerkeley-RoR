@@ -20,7 +20,7 @@ class SpeakersController < ApplicationController
   def destroy
     @speaker = Speaker.find(params[:id])
     @speaker.destroy
-    redirect_to speakers_url
+    redirect_to root_url
   end
 
   def index
@@ -43,9 +43,12 @@ class SpeakersController < ApplicationController
   def speaker_params
     params.require(:speaker).permit(
       :description,
+      :event_id,
       :quote,
       :name,
       :tagline,
+      :twitter,
+      :website,
     )
   end
 end

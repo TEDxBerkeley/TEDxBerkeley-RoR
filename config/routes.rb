@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   resources :users
-  resources :speakers
-  resources :team_members
+  resources :events
   resources :nominations
+  resources :speakers, except: [:index]
   resources :sponsors
+  resources :team_members
 
   get 'home', to:'static_pages#home', as: :static_home
   get 'about', to:'static_pages#about', as: :static_about

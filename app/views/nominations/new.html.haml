@@ -1,11 +1,11 @@
 .form-background
 
-  %h2 Nominate a Speaker
+  %h2 Suggest a Speaker
 
   = form_for :nomination, url: nominations_path, html: {class: "new-form"}  do |f|
     = f.text_field :submitter_name, placeholder:"Your Name"
     = f.text_field :submitter_email, placeholder:"Your Email"
     = f.text_field :speaker_name, placeholder:"Speaker Name"
-    = f.text_field :speaker_email, placeholder:"Speaker Email"
-    = f.text_area :description, placeholder:"Speaker Description"
+    = f.text_area :description, placeholder:"Why do you think this speaker would be good for TEDxBerkeley?"
+    = f.text_field :speaker_website, placeholder: "Speaker's Website"
     = f.submit "Submit Nomination!", :class=>"small round button"

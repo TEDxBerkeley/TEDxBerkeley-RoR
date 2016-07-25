@@ -1,9 +1,13 @@
-%h1 Edit Speaker
+.form-background
 
-= form_for @speaker do |f|
-  = f.text_field :name
-  = f.text_field :tagline
-  = f.text_field :quote
-  = f.text_area :description
-  = f.submit "Update"
+  %h1 Edit Speaker
+
+  = form_for :speaker, url: speakers_path, html: {class: "new-form"} do |f|
+    = f.text_field :name
+    = f.collection_select :event_id, Event.order(:year),:id,:year, include_blank: false
+    = f.text_field :tagline
+    = f.text_field :quote
+    = f.text_area :description
+    = f.submit "Update"
+
 

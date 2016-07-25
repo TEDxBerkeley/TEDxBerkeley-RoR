@@ -24,6 +24,7 @@ $off-gray: #484f60;
 ------------ */
 $font-family: 'Montserrat', sans-serif;
 
+$font-size-epic: 42px;
 $font-size-largest: 36px;
 $font-size-larger: 30px;
 $font-size-large: 24px;
@@ -290,7 +291,7 @@ nav {
 /* Homepage Banners
 ---------------------- */
 .short_banner {
-  background-color: $red_light;
+  background-image: url("http://s3.amazonaws.com/tedxberkeley/taiko_2_2015.jpg");
   min-height: 400px;
 
   display: flex;
@@ -314,7 +315,6 @@ nav {
 }
 
 .banner {
-  background-color: $black;
   min-height: 800px;
 
   display: flex;
@@ -377,17 +377,29 @@ nav {
   }
 }
 
+#first_banner {
+  background-image: url("http://s3.amazonaws.com/tedxberkeley/taiko_2015.jpg");
+}
+
+#second_banner {
+  background-image: url("http://s3.amazonaws.com/tedxberkeley/zellerbach_internal.jpg");
+}
+
+#third_banner {
+  background-image: url("http://s3.amazonaws.com/tedxberkeley/zellerbach_external.jpg");
+}
+
 /* Forms
 ----------------- */
 .new-form{
-    max-width: 500px;
-    padding: 10px 20px;
-    background: #f4f7f8;
-    margin: 10px auto;
-    padding: 20px;
-    background: #f4f7f8;
-    border-radius: 8px;
-    font-family: Georgia, "Times New Roman", Times, serif;
+  max-width: 500px;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  margin: 10px auto;
+  padding: 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .new-form fieldset{
     border: none;
@@ -543,6 +555,8 @@ nav {
 ------------ */
 
 .static_content {
+  display: flex;
+  flex-flow: column;
   margin-top: 64px;
   min-height: 600px;
 
@@ -582,6 +596,13 @@ nav {
     margin-left: 12px;
     display: inline;
   }
+}
+
+.event {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  min-width: 99%;
 }
 
 .team {
@@ -706,14 +727,49 @@ nav {
   }
 }
 
+#event_banner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+
+  background-image: url("http://s3.amazonaws.com/tedxberkeley/audience_2015.jpg");
+
+  min-height: 500px;
+  padding: 60px;
+
+  h1 {
+    font-size: $font-size-epic;
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  p {
+    margin-top: 32px;
+    line-height: 200%;
+    max-width: 60%;
+  }
+
+  .action_button {
+    margin-top: 20px;
+  }
+}
+
 /* Mobile
 -------------- */
 
 .wrapper {
   display: flex;
+  align-items: center;
   flex-flow: wrap;
 
   margin: 0px 120px;
+
+  h2 {
+    margin-left: 10px;
+  }
 }
 
 @media screen

@@ -3,6 +3,7 @@
 # Table name: speakers
 #
 #  id          :integer          not null, primary key
+#  event_id    :integer
 #  description :text             not null
 #  quote       :string
 #  name        :string           not null
@@ -16,5 +17,5 @@
 class Speaker < ActiveRecord::Base
   validates :name, presence: true
 
-  has_many :nominations
+  belongs_to :event
 end

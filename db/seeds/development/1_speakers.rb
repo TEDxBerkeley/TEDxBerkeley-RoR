@@ -1,6 +1,7 @@
 (1..20).each do |index|
   new_speaker = Speaker.create(
     description: Faker::Lorem.paragraphs(3).join(" \n"),
+    event: Event.order(:date).last,
     name: Faker::Name.name,
     quote: Faker::Lorem.sentence,
     tagline: Faker::Lorem.words(3).join(' '),

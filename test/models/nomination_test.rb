@@ -6,7 +6,7 @@
 #  submitter_name  :string           not null
 #  submitter_email :string           not null
 #  speaker_name    :string           not null
-#  speaker_email   :string
+#  speaker_website :string
 #  description     :text             not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null

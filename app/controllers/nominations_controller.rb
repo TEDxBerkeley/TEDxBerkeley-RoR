@@ -41,11 +41,11 @@ class NominationsController < ApplicationController
 
   def nomination_params
     params.require(:nomination).permit(
-      :description,
-      :speaker_email,
-      :speaker_name,
       :submitter_name,
       :submitter_email,
+      :speaker_name,
+      :speaker_website,
+      :description,
     )
   end
 end
