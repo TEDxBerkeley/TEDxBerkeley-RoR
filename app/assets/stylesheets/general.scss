@@ -555,10 +555,11 @@ nav {
     min-width: 330px;
     max-width: 520px;
     margin: 12px 0px 32px 32px;
+    line-height: 200%;
   }
 }
 
-/* Specific Indices
+/* Specific Index View
 ------------ */
 .nomination {
   display: flex;
@@ -586,6 +587,7 @@ nav {
 .team {
   display: flex;
   flex: 1;
+  flex-flow: column;
   min-width: 99%;
 }
 
@@ -593,6 +595,115 @@ nav {
   display: flex;
   flex: 1;
   min-width: 30%;
+}
+
+/* Specific Show View
+-------------- */
+
+.focus_panel {
+  display: flex;
+  flex-flow: wrap;
+  background-color: $dark-purple;
+  min-height: 300px;
+  width: 100%;
+  padding-top: 50px;
+
+  .photo {
+    .background-color: $green;
+    height: 250px;
+    width: 250px;
+  }
+
+  .speaker_info {
+    display: flex;
+    flex-flow: column;
+    margin-left: 30px;
+
+    #tagline {
+      margin-top: 20px;
+    }
+
+    .extras {
+      display: flex;
+      flex-flow: column;
+      margin-top: 120px;
+    }
+  }
+
+  .team_info {
+    display: flex;
+    flex-flow: column;
+
+    max-width: 70%;
+    margin-left: 30px;
+
+    #bio {
+      margin-top: 30px;
+    }
+  }
+}
+
+  #team {
+   min-height: 500px;
+ }
+
+.quote_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  width: 100%;
+  background-color: $white;
+
+  p {
+    color: $ash;
+  }
+}
+
+.speaker_bio {
+  background-color: $white;
+  padding: 30px 240px;
+
+  p {
+    padding-top: 20px;
+    color: $ash;
+    line-height: 200%;
+  }
+
+  #about_this_speaker {
+    border-bottom: solid 2px $black;
+  }
+}
+
+.show_action_buttons {
+  display: flex;
+  flex-flow: row;
+
+  min-height: 100px;
+
+  background-color: $dark-purple;
+  padding: 10%;
+
+  .tickets_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 32px;
+    margin-right: 16px;
+    background-color: $ted_red;
+  }
+
+  .event_button {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 32px;
+    background-color: $ash;
+  }
 }
 
 /* Mobile
@@ -610,6 +721,10 @@ and (min-width: 200px)
 and (max-width: 700px) {
   .wrapper {
     margin: 0px 10%;
+  }
+
+  .speaker_bio {
+    padding: 0% 20%;
   }
 
   .photo {

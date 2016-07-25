@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20160306185049) do
     t.string   "quote"
     t.string   "name",        null: false
     t.string   "tagline"
+    t.string   "twitter"
+    t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
