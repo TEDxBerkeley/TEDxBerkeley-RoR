@@ -7,11 +7,11 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :quote
       t.string :photo_url
       t.string :name, null: false
-      t.string :tagline
+      t.string :tagline, null: false
       t.string :twitter
       t.string :website
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

@@ -40,11 +40,11 @@ ActiveRecord::Schema.define(version: 20160725203430) do
     t.string   "quote"
     t.string   "photo_url"
     t.string   "name",        null: false
-    t.string   "tagline"
+    t.string   "tagline",     null: false
     t.string   "twitter"
     t.string   "website"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "speakers", ["event_id"], name: "index_speakers_on_event_id", using: :btree

@@ -400,6 +400,14 @@ nav {
   background: #f4f7f8;
   border-radius: 8px;
   font-family: Georgia, "Times New Roman", Times, serif;
+
+  a,
+  h1,
+  h2,
+  li,
+  p {
+    color: $ted_red;
+  }
 }
 .new-form fieldset{
     border: none;

@@ -8,15 +8,17 @@
 #  quote       :string
 #  photo_url   :string
 #  name        :string           not null
-#  tagline     :string
+#  tagline     :string           not null
 #  twitter     :string
 #  website     :string
-#  created_at  :datetime
-#  updated_at  :datetime
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 class Speaker < ActiveRecord::Base
   validates :name, presence: true
+  validates :tagline, presence: true
+  validates :description, presence: true
 
   belongs_to :event
 end

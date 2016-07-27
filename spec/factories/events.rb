@@ -10,10 +10,11 @@
 #  updated_at  :datetime         not null
 #
 
-class Event < ActiveRecord::Base
-  validates :theme, presence: true
-  validates :description, presence: true
-  validates :date, presence: true
+FactoryGirl.define do
+  factory :event do
+    year 1
+theme "MyString"
+description "MyText"
+  end
 
-  has_many :speakers
 end

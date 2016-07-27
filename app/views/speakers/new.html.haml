@@ -3,6 +3,7 @@
   %h1 New Speaker
 
   = form_for :speaker, url: speakers_path, html: {class: "new-form directUpload"}, data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } do |f|
+    = render 'shared/error_messages'
     = f.text_field :name, placeholder:"Name"
     = f.collection_select :event_id, Event.order(:date),:id,:date, include_blank: false
     = f.text_field :tagline, placeholder:"Tagline"
