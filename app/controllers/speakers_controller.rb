@@ -1,5 +1,6 @@
 class SpeakersController < ApplicationController
   load_and_authorize_resource
+  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   def new
   end
@@ -46,6 +47,7 @@ class SpeakersController < ApplicationController
       :event_id,
       :quote,
       :name,
+      :photo_url,
       :tagline,
       :twitter,
       :website,
@@ -54,7 +56,7 @@ class SpeakersController < ApplicationController
 
   private
 
-    def set_s3_direct_post
-      @s3_direct_post = S3_BUCKET.presigned_post(key: "uploads/#{SecureRandom.uuid}/${filename}", success_action_status: '201', acl: 'public-read')
+    def set_s3_direct_posts
+      @s3_direct_post = S3_BUCKET.presigned_post(key: "speakers/#{SecureRandom.uuid}_${filename}", success_action_status: '201', acl: 'public-read')
     end
 end

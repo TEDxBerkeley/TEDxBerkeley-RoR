@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 20160725203430) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string   "theme"
-    t.text     "description"
-    t.date     "date"
+    t.string   "theme",       null: false
+    t.text     "description", null: false
+    t.date     "date",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160725203430) do
     t.integer  "event_id"
     t.text     "description", null: false
     t.string   "quote"
+    t.string   "photo_url"
     t.string   "name",        null: false
     t.string   "tagline"
     t.string   "twitter"
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160725203430) do
   end
 
   create_table "team_members", force: :cascade do |t|
+    t.string   "photo_url"
     t.string   "name"
     t.string   "role"
     t.text     "bio"

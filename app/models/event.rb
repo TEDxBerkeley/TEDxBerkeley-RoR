@@ -3,9 +3,9 @@
 # Table name: events
 #
 #  id          :integer          not null, primary key
-#  theme       :string
-#  description :text
-#  date        :date
+#  theme       :string           not null
+#  description :text             not null
+#  date        :date             not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

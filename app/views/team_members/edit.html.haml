@@ -1,8 +1,9 @@
 .form-background
   %h1 Edit Team Member
 
-  = form_for :team_member, url: team_members_path, html: {class: "new-form"} do |f|
+  = form_for :team_member, url: team_members_path, html: {class: "new-form directUpload"}, data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } do |f|
     = f.text_field :name
     = f.text_field :role
     = f.text_area :bio
+    = f.file_field :photo_url
     = f.submit "Submit", :class=>"small round button"

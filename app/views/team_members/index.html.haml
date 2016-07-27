@@ -10,9 +10,12 @@
 .wrapper
   -@members.each do |member|
     =link_to member, class: 'team' do
-      .object_box.hvr-sweep-to-left
-        %h3=member.name
-        %p=member.role
-        -if can? [:destroy, :update], TeamMember
-          =link_to "Delete", member, method: :delete
-          =link_to "Edit", edit_team_member_path(member)
+      .object_box.hvr-sweep-to-left.team_index
+        - if member.photo_url
+          %img.photo{src: member.photo_url}
+        .team_contents
+          %h3=member.name
+          %p=member.role
+    -if can? [:destroy, :update], TeamMember
+      =link_to "Delete", member, method: :delete
+      =link_to "Edit", edit_team_member_path(member)
