@@ -12,4 +12,7 @@
 #
 
 class TeamMember < ActiveRecord::Base
+  validates :name, presence: true
+  validates :role, presence: true
+  validates :bio, presence: true
 end
