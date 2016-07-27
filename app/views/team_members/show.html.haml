@@ -1,6 +1,7 @@
 .focus_panel
   .wrapper
-    .photo
+    -if @member.photo_url
+      %img.photo{src:@member.photo_url}
     .team_info
       %h1= @member.name
       %h3= @member.role

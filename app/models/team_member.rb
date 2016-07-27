@@ -3,6 +3,7 @@
 # Table name: team_members
 #
 #  id         :integer          not null, primary key
+#  photo_url  :string
 #  name       :string
 #  role       :string
 #  bio        :text

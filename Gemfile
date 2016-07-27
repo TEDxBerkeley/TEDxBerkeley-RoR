@@ -12,6 +12,7 @@ gem 'kaminari', '~> 0.16.2'
 gem 'pg'
 gem 'pg_search'
 gem 'cancancan', '~> 1.10'
+gem 'aws-sdk', '~> 2'
 
 # Client
 gem 'haml'

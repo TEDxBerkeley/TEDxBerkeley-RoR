@@ -5,6 +5,7 @@ class CreateSpeakers < ActiveRecord::Migration
 
       t.text :description, null: false
       t.string :quote
+      t.string :photo_url
       t.string :name, null: false
       t.string :tagline
       t.string :twitter

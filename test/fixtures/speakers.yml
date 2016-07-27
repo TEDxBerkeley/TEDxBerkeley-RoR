@@ -6,6 +6,7 @@
 #  event_id    :integer
 #  description :text             not null
 #  quote       :string
+#  photo_url   :string
 #  name        :string           not null
 #  tagline     :string
 #  twitter     :string

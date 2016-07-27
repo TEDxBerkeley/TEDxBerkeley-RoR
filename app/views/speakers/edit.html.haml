@@ -2,12 +2,13 @@
 
   %h1 Edit Speaker
 
-  = form_for :speaker, url: speakers_path, html: {class: "new-form"} do |f|
+  = form_for :speaker, url: speakers_path, html: {class: "new-form directUpload"}, data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } do |f|
     = f.text_field :name
     = f.collection_select :event_id, Event.order(:year),:id,:year, include_blank: false
     = f.text_field :tagline
     = f.text_field :quote
     = f.text_area :description
+    = f.file_field :photo_url
     = f.submit "Update"
 
 

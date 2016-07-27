@@ -1,5 +1,6 @@
 class TeamMembersController < ApplicationController
   load_and_authorize_resource
+  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
 
   def new
   end
@@ -43,8 +44,15 @@ class TeamMembersController < ApplicationController
   def team_member_params
     params.require(:team_member).permit(
       :bio,
+      :photo_url,
       :name,
       :role,
     )
   end
+
+  private
+
+    def set_s3_direct_post
+        @s3_direct_post = S3_BUCKET.presigned_post(key: "team/#{SecureRandom.uuid}_${filename}", success_action_status: '201', acl: 'public-read')
+    end
 end
