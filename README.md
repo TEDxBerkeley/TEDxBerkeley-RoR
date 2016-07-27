@@ -20,12 +20,22 @@
 
         $ bundle install
 
-5. Create database and run migrations:
+5. Create database:
 
         $ rake db:create
 
-	$ rake db:migrate
+6. Run Migrations:
 
-6. Run Application.
+	      $ rake db:migrate
+
+7. Add seed data:
+
+        $ rake db:seed
+
+8. Run tests:
+
+        $ rspec
+
+9. Run Application.
 
         $ rails s
