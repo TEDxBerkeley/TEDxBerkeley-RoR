@@ -13,4 +13,4 @@
         %p Nominated By
         %h3= nomination.submitter_name
         - if can? :delete, Nomination
-          = link_to "Delete Nomination", nomination, method: :delete
+          = link_to "Delete Nomination", nomination, method: :delete, data: {confirm: "Are you sure you want to delete this nomination?"}
