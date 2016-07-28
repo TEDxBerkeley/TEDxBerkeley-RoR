@@ -5,6 +5,6 @@ def load_from_folder(folder)
   end
 end
 
-if Rails.env.development? || Rails.env.staging?
+if Rails.env.development? || Rails.env.staging? || Rails.env.production? # TODO Remove this when production seeds ready.
   load_from_folder('development')
 end
