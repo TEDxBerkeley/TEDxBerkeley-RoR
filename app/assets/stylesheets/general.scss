@@ -608,7 +608,7 @@ nav {
 
   .speaker_link {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     min-width: 80%;
   }
 
@@ -627,7 +627,7 @@ nav {
 
 .team_index {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
 
 .team_contents {
@@ -792,7 +792,7 @@ nav {
 .wrapper {
   display: flex;
   align-items: center;
-  flex-flow: wrap;
+  flex-flow: wrap row;
 
   margin: 0px 120px;
 
@@ -803,9 +803,14 @@ nav {
 
 @media screen
 and (min-width: 200px)
-and (max-width: 700px) {
+and (max-width: 750px) {
   .wrapper {
     margin: 0px 10%;
+    flex-flow: column;
+  }
+
+  .speaker {
+    min-width: 90%
   }
 
   .speaker_bio {
