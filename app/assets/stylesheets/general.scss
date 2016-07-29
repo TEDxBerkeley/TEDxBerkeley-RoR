@@ -790,7 +790,7 @@ nav {
 -------------- */
 
 .wrapper {
-  display: flex;
+  display: block;
   align-items: center;
   flex-flow: wrap row;
 
@@ -801,12 +801,25 @@ nav {
   }
 }
 
+// Safari Hack because safari has strange support for flexbox
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  .wrapper {
+    display: flex;
+    margin: 0px 10%;
+    flex-flow: column;
+  }
+
+  .speaker {
+    min-width: 90%;
+  }
+
+}
+
 @media screen
 and (min-width: 200px)
 and (max-width: 750px) {
   .wrapper {
     margin: 0px 10%;
-    flex-flow: column;
   }
 
   .speaker {
