@@ -10,6 +10,7 @@
 #  name        :string           not null
 #  tagline     :string           not null
 #  twitter     :string
+#  youtube_url :string
 #  website     :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

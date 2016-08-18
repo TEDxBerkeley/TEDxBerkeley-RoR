@@ -9,6 +9,7 @@ class CreateSpeakers < ActiveRecord::Migration
       t.string :name, null: false
       t.string :tagline, null: false
       t.string :twitter
+      t.string :youtube_url
       t.string :website
 
       t.timestamps null: false

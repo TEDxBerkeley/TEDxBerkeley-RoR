@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160725203430) do
     t.string   "name",        null: false
     t.string   "tagline",     null: false
     t.string   "twitter"
+    t.string   "youtube_url"
     t.string   "website"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

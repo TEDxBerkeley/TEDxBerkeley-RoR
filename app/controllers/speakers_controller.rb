@@ -52,6 +52,7 @@ class SpeakersController < ApplicationController
       :tagline,
       :twitter,
       :website,
+      :youtube_url,
     )
   end
 
