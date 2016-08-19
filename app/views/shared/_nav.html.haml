@@ -1,7 +1,7 @@
 %nav
   = link_to root_url, id: "logo" do
     %h1.title TEDxBerkeley
-  = link_to "http://www.eventbrite.com", class: "tickets_button" do
+  = link_to "http://www.eventbrite.com", class: "tickets_button", target: "blank" do
     %h4 Purchase Tickets
   %i{class: "fa fa-bars draw_button", onclick: "moveNav()"}
   %div{class: "sidenav", id: "mySideNav"}

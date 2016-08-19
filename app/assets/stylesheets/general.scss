@@ -1,4 +1,3 @@
-
 /* Colors
 ------------ */
 $ash: #383838;
@@ -205,11 +204,11 @@ nav {
 
 .sidenav {
   height: 100%;
-  width: 0;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: 49px;
-  right: 0;
+  right: -300px;
   background-color: $ash;
   overflow-x: hidden;
   padding-top: 52px;
@@ -217,7 +216,7 @@ nav {
   border-left:1px solid black;
 
   li {
-    margin: 10px;
+    margin: 20px;
     padding: 8px;
   }
 
@@ -308,14 +307,20 @@ nav {
   }
 }
 
+.involve_buttons{
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .action_button {
   background-color: $ted_red;
-  max-width: 300px;
+  min-width: 200px;
   padding: 16px;
+  margin: 10px;
 }
 
 .banner {
-  min-height: 800px;
+  min-height: 500px;
 
   display: flex;
   align-items: center;
@@ -593,6 +598,40 @@ nav {
   }
 }
 
+.talk_lists {
+  display: flex;
+  flex-flow: column;
+  min-height: 500px;
+  padding: 40px;
+  background-color: $white;
+}
+
+
+.talk_box {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+
+  background-color: $ash;
+
+  &:hover {
+    background-color:rgba(172, 0, 0, 1);
+    transition: .4s;
+    -webkit-transition: .4s;
+  }
+}
+
+.talk_category {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: $white;
+}
+
+.category_title {
+  color: $ted_red
+}
+
 /* Specific Index View
 ------------ */
 .nomination {
@@ -608,7 +647,7 @@ nav {
 
   .speaker_link {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
     min-width: 80%;
   }
 
@@ -627,7 +666,7 @@ nav {
 
 .team_index {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
 }
 
 .team_contents {
@@ -792,7 +831,7 @@ nav {
 .wrapper {
   display: flex;
   align-items: center;
-  flex-flow: wrap;
+  flex-flow: row wrap;
 
   margin: 0px 120px;
 
@@ -801,11 +840,29 @@ nav {
   }
 }
 
+// Safari Hack because safari has strange support for flexbox
+@supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  .wrapper {
+    display: flex;
+    margin: 0px 10%;
+    flex-flow: column;
+  }
+
+  .speaker {
+    min-width: 90%;
+  }
+
+}
+
 @media screen
 and (min-width: 200px)
-and (max-width: 700px) {
+and (max-width: 750px) {
   .wrapper {
     margin: 0px 10%;
+  }
+
+  .speaker {
+    min-width: 90%
   }
 
   .speaker_bio {
@@ -821,4 +878,25 @@ and (max-width: 700px) {
       font-size: 12px;
     }
   }
+}
+
+
+// Embedded Youtube Styling
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
 }

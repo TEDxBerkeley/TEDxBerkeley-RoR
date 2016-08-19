@@ -1,11 +1,26 @@
 .banner#first_banner
-  =link_to "http://www.eventbrite.com/e/tedxberkeley-2016-finding-x-tickets-18508165421" do
+  =link_to @current_event do
     .action_button
-      %h2.ticket_button Buy Tickets Now!
-.banner#second_banner
-  %h3.about_button Learn More
-.banner#third_banner
-  .float_frame
-    %h3.init_box Cats Initiative
-    %h3.init_box Dogs initiative
-    %h3.init_box ChinChilla Initiative
+      %h2.ticket_button TEDxBerkeley #{@current_event.date.year}
+.talk_lists
+  %h2.category_title 2016 Talks
+  .talk_category
+    -@current_event.speakers.limit(5).each do |speaker|
+      =link_to speaker, class: 'speaker_link' do
+        .talk_box
+          %h3= speaker.name
+          %h4= speaker.tagline
+  %h2.category_title Most Popular Talks
+  .talk_category
+    -@popular_talks.each do |speaker|
+      =link_to speaker, class: 'speaker_link' do
+        .talk_box
+          %h3= speaker.name
+          %h4= speaker.tagline
+  %h2.category_title Staff Favorites
+  .talk_category
+    -@staff_talks.each do |speaker|
+      =link_to speaker, class: 'speaker_link' do
+        .talk_box
+          %h3= speaker.name
+          %h4= speaker.tagline
