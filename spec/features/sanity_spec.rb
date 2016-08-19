@@ -10,7 +10,7 @@ RSpec.describe "The app works" do
     end
 
     it "works" do
-      expect(page).to have_content "Buy Tickets Now!"
+      expect(page).to have_content "TEDxBerkeley"
     end
   end
 end
