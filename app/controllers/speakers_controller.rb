@@ -22,7 +22,7 @@ class SpeakersController < ApplicationController
   def destroy
     @speaker = Speaker.find(params[:id])
     @speaker.destroy
-    redirect_to root_url
+    redirect_to event_url(@speaker.event_id)
   end
 
   def index

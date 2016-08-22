@@ -1,10 +1,23 @@
-.wrapper
-  .static_content
-    %h1 Partners
-    %p Our partners play an essential part in making TEDxBerkeley a success, they help us spread our message practice what we preach by supporting local businesses. Please contact us at info@tedxberkeley.org if you would like to become a partner.
+.sponsor_index
+  %h1 Partners
+  %p Our partners play an essential part in making TEDxBerkeley a success, they help us spread our message practice what we preach by supporting local businesses. Please contact us at info@tedxberkeley.org if you would like to become a partner.
 
+.year_banner
+  .wrapper
+    %h1= @current_event.date.year
+    %h2 Partners
+    -if can? :create, Sponsor
+      %h1= link_to "New Partner", new_sponsor_path
+
+.wrapper
   - @sponsors.each do |sponsor|
     .object_box.hvr-sweep-to-left.sponsor
       =link_to sponsor, class: 'sponsor_link' do
-        sponsor.name
+        %h1=sponsor.name
+        %br
+        %h3=sponsor.tagline
+      -if can? [:destroy, :update], Sponsor
+        =link_to "Delete", sponsor, method: :delete, data: {confirm: "Are you sure you want to delete this sponsor?"}
+        =link_to "Edit", edit_sponsor_path(sponsor)
+
 

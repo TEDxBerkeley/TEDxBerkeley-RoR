@@ -374,6 +374,7 @@ nav {
 }
 
 .year_banner {
+  min-height: 20px;
   background-color: $dark-purple;
   padding: 4px;
 
@@ -670,6 +671,33 @@ nav {
   min-width: 99%;
 }
 
+.sponsor {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  min-width: 99%;
+}
+
+.sponsor_index {
+  display: flex;
+  flex-flow: column;
+  min-height: 400px;
+  padding: 60px;
+
+  h1,
+  h2 {
+    color: $ted_red;
+  }
+
+  p {
+    min-width: 330px;
+    max-width: 520px;
+    margin: 12px 0px 32px 32px;
+    line-height: 200%;
+  }
+}
+
+
 .team_index {
   display: flex;
   flex-flow: row wrap;
@@ -809,7 +837,7 @@ nav {
 
   background-image: url("http://s3.amazonaws.com/tedxberkeley/audience_2015.jpg");
 
-  min-height: 500px;
+  min-height: 440px;
   padding: 60px;
 
   h1 {

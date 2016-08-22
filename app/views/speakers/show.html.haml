@@ -1,4 +1,4 @@
-- if @speaker.youtube_url
+- if not @speaker.youtube_url.blank?
   .embed-container
     = embed(@speaker.youtube_url)
 .focus_panel
