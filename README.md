@@ -10,7 +10,7 @@
 
 2. Clone the TEDxBerkeley app into your workspace:
 
-        $ git clone clone_uri
+        $ git clone https://github.com/TEDxBerkeley/tedxberkeley.org.git
 
 3. Create a new rails project from the project directory. Answer `n` to Overwriting files:
 
