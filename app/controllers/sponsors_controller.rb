@@ -15,6 +15,10 @@ class SponsorsController < ApplicationController
     @sponsors = Sponsor.all
   end
 
+  def show
+    @sponsor = Sponsor.find(params[:id])
+  end
+
   def update
   end
 

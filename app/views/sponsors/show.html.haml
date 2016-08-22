@@ -1,0 +1,12 @@
+.focus_panel
+  .wrapper
+    %div.photo
+    .speaker_info
+      %h1= @sponsor.name
+      %h3#tagline= @sponsor.website
+.speaker_bio
+  %p#about_this_speaker About This Sponsor
+  %p=@sponsor.description
+.show_action_buttons
+  %h2.tickets_button Purchase Tickets
+  %h2.event_button More Information
