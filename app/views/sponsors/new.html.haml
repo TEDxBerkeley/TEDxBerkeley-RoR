@@ -1,0 +1,14 @@
+.form-background
+
+  %h1 New Sponsor
+
+  = form_for :sponsor, url: sponsors_path, html: {class: "new-form directUpload"}, data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } do |f|
+    = render 'shared/sponsor_error_messages'
+    = f.text_field :name, placeholder:"Name"
+    = f.collection_select :event_id, Event.order(:date),:id,:date, include_blank: false
+    = f.text_field :tagline, placeholder:"Tagline"
+    = f.text_field :website, placeholder:"Website"
+    = f.text_field :facebook, placeholder:"Facebook"
+    = f.text_area :description, placeholder:"Description"
+    = f.file_field :logo_url
+    = f.submit "Submit"

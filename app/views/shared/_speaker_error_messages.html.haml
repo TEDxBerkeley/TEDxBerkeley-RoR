@@ -1,0 +1,8 @@
+- if @speaker.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      %p The form contains
+      %p= pluralize(@speaker.errors.count, "error")
+    %ul
+    - @speaker.errors.full_messages.each do |msg|
+      %li= msg

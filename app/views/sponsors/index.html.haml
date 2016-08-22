@@ -13,5 +13,11 @@
   - @sponsors.each do |sponsor|
     .object_box.hvr-sweep-to-left.sponsor
       =link_to sponsor, class: 'sponsor_link' do
-        =sponsor.name
+        %h1=sponsor.name
+        %br
+        %h3=sponsor.tagline
+      -if can? [:destroy, :update], Sponsor
+        =link_to "Delete", sponsor, method: :delete, data: {confirm: "Are you sure you want to delete this sponsor?"}
+        =link_to "Edit", edit_sponsor_path(sponsor)
+
 

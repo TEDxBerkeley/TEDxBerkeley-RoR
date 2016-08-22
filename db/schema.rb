@@ -51,14 +51,18 @@ ActiveRecord::Schema.define(version: 20160725203430) do
   add_index "speakers", ["event_id"], name: "index_speakers_on_event_id", using: :btree
 
   create_table "sponsors", force: :cascade do |t|
-    t.string   "name"
-    t.string   "website"
-    t.string   "logo"
-    t.text     "description"
+    t.integer  "event_id"
+    t.string   "name",        null: false
+    t.string   "website",     null: false
+    t.string   "logo_url"
+    t.string   "tagline",     null: false
+    t.text     "description", null: false
     t.string   "facebook"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "sponsors", ["event_id"], name: "index_sponsors_on_event_id", using: :btree
 
   create_table "team_members", force: :cascade do |t|
     t.string   "photo_url"
